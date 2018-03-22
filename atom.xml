@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-22T02:30:49.281Z</updated>
+  <updated>2018-03-22T02:33:46.089Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://yoursite.com/2018/03/21/hello-world/"/>
     <id>http://yoursite.com/2018/03/21/hello-world/</id>
     <published>2018-03-21T06:29:45.439Z</published>
-    <updated>2018-03-22T02:30:49.281Z</updated>
+    <updated>2018-03-22T02:33:46.089Z</updated>
     
-    <content type="html"><![CDATA[<p>Hello, World程序指的是指在计算机屏幕上输出“Hello, World!”（意为“你好，世界！”）这行字符串的计算机程序。一般来说，这是每一种计算机编程语言中最基本、最简单的程序，亦通常是初学者所编写的第一个程序。它还可以用来确定该语言的编译器、程序开发环境，以及运行环境是否已经安装妥当。</p><p>将输出字符串“Hello World”作为第一个示范程序，现在已经成为编程语言学习的传统。“Hello World”示范程序最早出现于1972年，由贝尔实验室成员布莱恩·柯林汉撰写的内部技术文件《”A Tutorial Introduction to the Language B” 》之中。不久同作者于1974年所撰写的《Programming in C: A Tutorial》，也延用这个示例；而布莱恩·柯林汉和丹尼斯·里奇以本文件扩编改写的《C程序设计语言》也保留了这个示范程序，此后广泛流传。 –引用于《维基百科》</p><p>通用,第一次使用个人博客, Hello World , 你好世界</p>]]></content>
+    <content type="html"><![CDATA[<p>Hello, World程序指的是指在计算机屏幕上输出“Hello, World!”（意为“你好，世界！”）这行字符串的计算机程序。一般来说，这是每一种计算机编程语言中最基本、最简单的程序，亦通常是初学者所编写的第一个程序。它还可以用来确定该语言的编译器、程序开发环境，以及运行环境是否已经安装妥当。</p><p>将输出字符串“Hello World”作为第一个示范程序，现在已经成为编程语言学习的传统。“Hello World”示范程序最早出于1972年，由贝尔实验室成员布莱恩·柯林汉撰写的内部技术文件《”A Tutorial Introduction to the Language B” 》之中。不久同作者于1974年所撰写的《Programming in C: A Tutorial》，也延用这个示例；而布莱恩·柯林汉和丹尼斯·里奇以本文件扩编改写的《C程序设计语言》也保留了这个示范程序，此后广泛流传。 –引用于《维基百科》</p><p>那么,第一次使用个人博客,依然离不开最熟悉的。</p><p>Hello World</p><p>你好世界</p>]]></content>
     
     <summary type="html">
     
