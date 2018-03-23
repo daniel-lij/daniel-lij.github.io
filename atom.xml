@@ -2,19 +2,42 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Illusory</title>
   
-  <subtitle>A technical blog for comparison</subtitle>
+  <subtitle>一个无聊的人的独白</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-22T06:07:48.529Z</updated>
+  <updated>2018-03-23T09:02:13.633Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
-    <name>old liao</name>
+    <name>daniel-lij</name>
     
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>测试</title>
+    <link href="http://yoursite.com/2018/03/23/%E6%B5%8B%E8%AF%95/"/>
+    <id>http://yoursite.com/2018/03/23/测试/</id>
+    <published>2018-03-23T09:01:38.000Z</published>
+    <updated>2018-03-23T09:02:13.633Z</updated>
+    
+    <content type="html"><![CDATA[<p>RSS是一个缩写的英文术语，在英文中被认为有几个不同的源头，并被不同的技术团体做不同的解释。它即可以是”Rich Site Summary”（丰富站点摘要），或”RDF Site Summary”（RDF站点摘要），也可以是”Really Simple Syndication”（真正简易聚合）。现在已有的有Netscape, 1.0 (RSS-DEV版本),和 0.9x and 2.0 (UserLand Software版本) 0.9x和2.0。不过几乎所有能支持RSS的程序都可以浏览不同版本的RSS。<br>RSS是基于文本的格式。它是XML（可扩展标识语言）的一种形式。通常RSS文件都是标为XML，RSS files(通常也被称为RSS feeds或者channels)通常只包含简单的项目列表。一般而言，每一个项目都含有一个标题，一段简单的介绍，还有一个URL链接（比如是一个网页的地址）。其他的信息，例如日期，创建者的名字等等，都是可以选择的。<br>RSS是站点用来和其他站点之间共享内容的一种简易方式（也叫聚合内容），通常被用于新闻和其他按顺序排列的网站，例如Blog。一段项目的介绍可能包含新闻的全部介绍，Blog post等等。或者仅仅是额外的内容或者简短的介绍。这些项目的链接通常都能链接到全部的内容。网络用户可以在客户端借助于支持RSS的新闻聚合工具软件（例如NewzCrawler、FeedDemon），在不打开网站内容页面的情况下阅读支持RSS输出的网站内容。网站提供RSS输出，有利于让用户发现网站内容的更新。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;RSS是一个缩写的英文术语，在英文中被认为有几个不同的源头，并被不同的技术团体做不同的解释。它即可以是”Rich Site Summary”（丰富站点摘要），或”RDF Site Summary”（RDF站点摘要），也可以是”Really Simple Syndicatio
+      
+    
+    </summary>
+    
+    
+      <category term="测试" scheme="http://yoursite.com/tags/%E6%B5%8B%E8%AF%95/"/>
+    
+  </entry>
   
   <entry>
     <title>独立游戏制作人 陈星汉</title>
