@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-23T09:02:13.633Z</updated>
+  <updated>2018-03-24T01:34:29.489Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,22 +17,49 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>测试</title>
-    <link href="http://yoursite.com/2018/03/23/%E6%B5%8B%E8%AF%95/"/>
-    <id>http://yoursite.com/2018/03/23/测试/</id>
-    <published>2018-03-23T09:01:38.000Z</published>
-    <updated>2018-03-23T09:02:13.633Z</updated>
+    <title>你好 世界</title>
+    <link href="http://yoursite.com/2018/03/24/Hello%20World/"/>
+    <id>http://yoursite.com/2018/03/24/Hello World/</id>
+    <published>2018-03-24T01:37:00.000Z</published>
+    <updated>2018-03-24T01:34:29.489Z</updated>
     
-    <content type="html"><![CDATA[<p>RSS是一个缩写的英文术语，在英文中被认为有几个不同的源头，并被不同的技术团体做不同的解释。它即可以是”Rich Site Summary”（丰富站点摘要），或”RDF Site Summary”（RDF站点摘要），也可以是”Really Simple Syndication”（真正简易聚合）。现在已有的有Netscape, 1.0 (RSS-DEV版本),和 0.9x and 2.0 (UserLand Software版本) 0.9x和2.0。不过几乎所有能支持RSS的程序都可以浏览不同版本的RSS。<br>RSS是基于文本的格式。它是XML（可扩展标识语言）的一种形式。通常RSS文件都是标为XML，RSS files(通常也被称为RSS feeds或者channels)通常只包含简单的项目列表。一般而言，每一个项目都含有一个标题，一段简单的介绍，还有一个URL链接（比如是一个网页的地址）。其他的信息，例如日期，创建者的名字等等，都是可以选择的。<br>RSS是站点用来和其他站点之间共享内容的一种简易方式（也叫聚合内容），通常被用于新闻和其他按顺序排列的网站，例如Blog。一段项目的介绍可能包含新闻的全部介绍，Blog post等等。或者仅仅是额外的内容或者简短的介绍。这些项目的链接通常都能链接到全部的内容。网络用户可以在客户端借助于支持RSS的新闻聚合工具软件（例如NewzCrawler、FeedDemon），在不打开网站内容页面的情况下阅读支持RSS输出的网站内容。网站提供RSS输出，有利于让用户发现网站内容的更新。</p>]]></content>
+    <content type="html"><![CDATA[<p>Hello, World程序指的是指在计算机屏幕上输出“Hello, World!”（意为“你好，世界！”）这行字符串的计算机程序。一般来说，这是每一种计算机编程语言中最基本、最简单的程序，亦通常是初学者所编写的第一个程序。它还可以用来确定该语言的编译器、程序开发环境，以及运行环境是否已经安装妥当。</p><p>将输出字符串“Hello World”作为第一个示范程序，现在已经成为编程语言学习的传统。“Hello World”示范程序最早出于1972年，由贝尔实验室成员布莱恩·柯林汉撰写的内部技术文件《”A Tutorial Introduction to the Language B” 》之中。不久同作者于1974年所撰写的《Programming in C: A Tutorial》，也延用这个示例；而布莱恩·柯林汉和丹尼斯·里奇以本文件扩编改写的《C程序设计语言》也保留了这个示范程序，此后广泛流传。 –引用于《维基百科》</p><p>那么,第一次使用个人博客,依然离不开最熟悉的。</p><p>Hello World</p><p>你好世界</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;RSS是一个缩写的英文术语，在英文中被认为有几个不同的源头，并被不同的技术团体做不同的解释。它即可以是”Rich Site Summary”（丰富站点摘要），或”RDF Site Summary”（RDF站点摘要），也可以是”Really Simple Syndicatio
+        &lt;p&gt;Hello, World程序指的是指在计算机屏幕上输出“Hello, World!”（意为“你好，世界！”）这行字符串的计算机程序。一般来说，这是每一种计算机编程语言中最基本、最简单的程序，亦通常是初学者所编写的第一个程序。它还可以用来确定该语言的编译器、程序开发环境，以及
       
     
     </summary>
+    
+      <category term="测试" scheme="http://yoursite.com/categories/%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="测试" scheme="http://yoursite.com/tags/%E6%B5%8B%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2018/03/24/%E4%BD%A0%E5%A5%BD%20%E4%B8%96%E7%95%8C/"/>
+    <id>http://yoursite.com/2018/03/24/你好 世界/</id>
+    <published>2018-03-24T01:35:00.000Z</published>
+    <updated>2018-03-24T01:34:31.807Z</updated>
+    
+    <content type="html"><![CDATA[<p>Hello, World program refers to the output of “Hello, World!” on the computer screen (meaning “Hello, the world!”) The computer program for this string of strings. In general, this is the most basic and simplest program in every computer programming language, and is usually the first program written by a beginner. It can also be used to determine the compiler of the language, the development environment of the program, and whether the running environment is installed properly.</p><p>The output string “Hello World” as the first demonstration program has now become a tradition of programming language learning. The “Hello World” demonstration program was first built in 1972 by Baer laboratory member Brian Collingham’s internal technical document “A Tutorial Introduction to the Language B”. Soon in 1974, written by “Programming in C: A Tutorial”, also used this example; and Brian Colin and Denis Ricci to rewrite this document as “C programming language” has retained this demonstration program, then widely circulated. - quoted in “Wikipedia”</p><p>Then, the first use of personal blog, still can not be separated from the most familiar.</p><p>Hello World</p><p>你好 世界</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Hello, World program refers to the output of “Hello, World!” on the computer screen (meaning “Hello, the world!”) The computer program fo
+      
+    
+    </summary>
+    
+      <category term="英文测试" scheme="http://yoursite.com/categories/%E8%8B%B1%E6%96%87%E6%B5%8B%E8%AF%95/"/>
     
     
       <category term="测试" scheme="http://yoursite.com/tags/%E6%B5%8B%E8%AF%95/"/>
@@ -65,79 +92,6 @@
     
     
       <category term="独立游戏" scheme="http://yoursite.com/tags/%E7%8B%AC%E7%AB%8B%E6%B8%B8%E6%88%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>桃花源记</title>
-    <link href="http://yoursite.com/2018/03/22/%E6%A1%83%E8%8A%B1%E6%BA%90%E8%AE%B0/"/>
-    <id>http://yoursite.com/2018/03/22/桃花源记/</id>
-    <published>2018-03-22T05:12:40.000Z</published>
-    <updated>2018-03-22T05:35:23.681Z</updated>
-    
-    <content type="html"><![CDATA[<p>晋太元中，武陵人捕鱼为业。缘溪行，忘路之远近。忽逢桃花林，夹岸数百步，中无杂树，芳草鲜<br>美，落英缤纷，渔人甚异之。复前行，欲穷其林。</p><p>林尽水源，便得一山，山有小口，仿佛若有光。便舍船，从口入。初极狭，才通人。复行数十步，<br>豁然开朗。土地平旷，屋舍俨然，有良田美池桑竹之属。阡陌交通，鸡犬相闻。其中往来种作，男<br>女衣着，悉如外人。黄发垂髫，并怡然自乐。</p><p>见渔人，乃大惊，问所从来。具答之。便要还家，设酒杀鸡作食。村中闻有此人，咸来问讯。自云<br>先世避秦时乱，率妻子邑人来此绝境，不复出焉，遂与外人间隔。问今是何世，乃不知有汉，无论<br>魏晋。此人一一为具言所闻，皆叹惋。余人各复延至其家，皆出酒食。停数日，辞去。此中人语<br>云：“不足为外人道也。”</p><p>既出，得其船，便扶向路，处处志之。及郡下，诣太守，说如此。太守即遣人随其往，寻向所志，<br>遂迷，不复得路。</p><p>南阳刘子骥，高尚士也，闻之，欣然规往。未果，寻病终，后遂无问津者。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;晋太元中，武陵人捕鱼为业。缘溪行，忘路之远近。忽逢桃花林，夹岸数百步，中无杂树，芳草鲜&lt;br&gt;美，落英缤纷，渔人甚异之。复前行，欲穷其林。&lt;/p&gt;
-&lt;p&gt;林尽水源，便得一山，山有小口，仿佛若有光。便舍船，从口入。初极狭，才通人。复行数十步，&lt;br&gt;豁然开朗。土地平旷，屋舍俨
-      
-    
-    </summary>
-    
-      <category term="测试" scheme="http://yoursite.com/categories/%E6%B5%8B%E8%AF%95/"/>
-    
-    
-      <category term="古文" scheme="http://yoursite.com/tags/%E5%8F%A4%E6%96%87/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>中文测试</title>
-    <link href="http://yoursite.com/2018/03/22/%E4%B8%AD%E6%96%87%E6%B5%8B%E8%AF%95/"/>
-    <id>http://yoursite.com/2018/03/22/中文测试/</id>
-    <published>2018-03-22T04:14:44.000Z</published>
-    <updated>2018-03-22T05:36:30.163Z</updated>
-    
-    <content type="html"><![CDATA[<p>先帝创业未半而中道崩殂，今天下三分，益州疲弊，此诚危急存亡之秋也。然侍卫之臣不懈于<br>内，忠志之士忘身于外者，盖追先帝之殊遇，欲报之于陛下也。诚宜开张圣听，以光先帝遗德，<br>恢弘志士之气，不宜妄自菲薄，引喻失义，以塞忠谏之路也。</p><p>宫中府中，俱为一体，陟罚臧否，不宜异同。若有作奸犯科及为忠善者，宜付有司论其刑赏，以<br>昭陛下平明之理，不宜偏私，使内外异法也。</p><p>侍中、侍郎郭攸之、费祎、董允等，此皆良实，志虑忠纯，是以先帝简拔以遗陛下。愚以为宫中<br>之事，事无大小，悉以咨之，然后施行，必得裨补阙漏，有所广益。</p><p>将军向宠，性行淑均，晓畅军事，试用之于昔日，先帝称之曰能，是以众议举宠为督。愚以为营<br>中之事，悉以咨之，必能使行阵和睦，优劣得所。</p><p>亲贤臣，远小人，此先汉所以兴隆也；亲小人，远贤臣，此后汉所以倾颓也。先帝在时，每与臣<br>论此事，未尝不叹息痛恨于桓、灵也。侍中、尚书、长史、参军，此悉贞良死节之臣，愿陛下亲<br>之信之，则汉室之隆，可计日而待也。</p><p>臣本布衣，躬耕于南阳，苟全性命于乱世，不求闻达于诸侯。先帝不以臣卑鄙，猥自枉屈，三顾<br>臣于草庐之中，咨臣以当世之事，由是感激，遂许先帝以驱驰。后值倾覆，受任于败军之际，奉<br>命于危难之间，尔来二十有一年矣。</p><p>先帝知臣谨慎，故临崩寄臣以大事也。受命以来，夙夜忧叹，恐付托不效，以伤先帝之明，故<br>五月渡泸，深入不毛。今南方已定，兵甲已足，当奖率三军，北定中原，庶竭驽钝，攘除奸凶，<br>兴复汉室，还于旧都。此臣所以报先帝而忠陛下之职分也。至于斟酌损益，进尽忠言，则攸之、<br>祎、允之任也。</p><p>愿陛下托臣以讨贼兴复之效，不效，则治臣之罪，以告先帝之灵。若无兴德之言，则责攸之、<br>祎、允等之慢，以彰其咎；陛下亦宜自谋，以咨诹善道，察纳雅言，深追先帝遗诏，臣不胜受恩<br>感激。</p><p>今当远离，临表涕零，不知所言。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;先帝创业未半而中道崩殂，今天下三分，益州疲弊，此诚危急存亡之秋也。然侍卫之臣不懈于&lt;br&gt;内，忠志之士忘身于外者，盖追先帝之殊遇，欲报之于陛下也。诚宜开张圣听，以光先帝遗德，&lt;br&gt;恢弘志士之气，不宜妄自菲薄，引喻失义，以塞忠谏之路也。&lt;/p&gt;
-&lt;p&gt;宫中府中，俱为一体，陟
-      
-    
-    </summary>
-    
-      <category term="测试" scheme="http://yoursite.com/categories/%E6%B5%8B%E8%AF%95/"/>
-    
-    
-      <category term="古文" scheme="http://yoursite.com/tags/%E5%8F%A4%E6%96%87/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2018/03/21/hello-world/"/>
-    <id>http://yoursite.com/2018/03/21/hello-world/</id>
-    <published>2018-03-21T06:29:45.439Z</published>
-    <updated>2018-03-22T02:37:42.936Z</updated>
-    
-    <content type="html"><![CDATA[<p>Hello, World程序指的是指在计算机屏幕上输出“Hello, World!”（意为“你好，世界！”）这行字符串的计算机程序。一般来说，这是每一种计算机编程语言中最基本、最简单的程序，亦通常是初学者所编写的第一个程序。它还可以用来确定该语言的编译器、程序开发环境，以及运行环境是否已经安装妥当。</p><p>将输出字符串“Hello World”作为第一个示范程序，现在已经成为编程语言学习的传统。“Hello World”示范程序最早出于1972年，由贝尔实验室成员布莱恩·柯林汉撰写的内部技术文件《”A Tutorial Introduction to the Language B” 》之中。不久同作者于1974年所撰写的《Programming in C: A Tutorial》，也延用这个示例；而布莱恩·柯林汉和丹尼斯·里奇以本文件扩编改写的《C程序设计语言》也保留了这个示范程序，此后广泛流传。 –引用于《维基百科》</p><p>那么,第一次使用个人博客,依然离不开最熟悉的。</p><p>Hello World</p><p>你好世界</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Hello, World程序指的是指在计算机屏幕上输出“Hello, World!”（意为“你好，世界！”）这行字符串的计算机程序。一般来说，这是每一种计算机编程语言中最基本、最简单的程序，亦通常是初学者所编写的第一个程序。它还可以用来确定该语言的编译器、程序开发环境，以及
-      
-    
-    </summary>
-    
     
   </entry>
   
