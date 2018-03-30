@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>设计模式-单例模式 | Illusory</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="JavaScript设计模式-单例模式单例模式: 保证一个类仅有一个实例,并提供一个访问它的全局变量实现简单单例模式1234567891011121314151617181920var Singleton = function( name )&amp;#123;    this.name = name    this.instance = null&amp;#125;Singleton.prototype.get">
+<meta name="keywords" content="设计模式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="设计模式-单例模式">
+<meta property="og:url" content="http://yoursite.com/2018/03/30/设计模式-单例模式/index.html">
+<meta property="og:site_name" content="Illusory">
+<meta property="og:description" content="JavaScript设计模式-单例模式单例模式: 保证一个类仅有一个实例,并提供一个访问它的全局变量实现简单单例模式1234567891011121314151617181920var Singleton = function( name )&amp;#123;    this.name = name    this.instance = null&amp;#125;Singleton.prototype.get">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-03-30T03:43:28.165Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="设计模式-单例模式">
+<meta name="twitter:description" content="JavaScript设计模式-单例模式单例模式: 保证一个类仅有一个实例,并提供一个访问它的全局变量实现简单单例模式1234567891011121314151617181920var Singleton = function( name )&amp;#123;    this.name = name    this.instance = null&amp;#125;Singleton.prototype.get">
+  
+    <link rel="alternate" href="/atom.xml" title="Illusory" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/daniel-lij.ico">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/plugin/bganimation/bg.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="/images/daniel-lij.png">
+    <h2 class="author">daniel-lij</h2>
+    <h3 class="description">( ゜- ゜)つロ 干杯</h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>7</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>8</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>4</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+        <section id="main"><article id="post-设计模式-单例模式" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/30/设计模式-单例模式/" class="article-date">
+  <time class="post-time" datetime="2018-03-30T03:28:02.000Z" itemprop="datePublished">
+    <span class="post-month">3月</span><br/>
+    <span class="post-day">30</span>
+  </time>
+</a>
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      设计模式-单例模式
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JavaScript基础/">JavaScript基础</a>,<a class="article-category-link" href="/categories/JavaScript基础/单例模式/">单例模式</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+        
+          <h2 id="JavaScript设计模式-单例模式"><a href="#JavaScript设计模式-单例模式" class="headerlink" title="JavaScript设计模式-单例模式"></a>JavaScript设计模式-单例模式</h2><h3 id="单例模式-保证一个类仅有一个实例-并提供一个访问它的全局变量"><a href="#单例模式-保证一个类仅有一个实例-并提供一个访问它的全局变量" class="headerlink" title="单例模式: 保证一个类仅有一个实例,并提供一个访问它的全局变量"></a><strong>单例模式:</strong> 保证一个类仅有一个实例,并提供一个访问它的全局变量</h3><h3 id="实现简单单例模式"><a href="#实现简单单例模式" class="headerlink" title="实现简单单例模式"></a>实现简单单例模式</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Singleton = <span class="function"><span class="keyword">function</span>(<span class="params"> name </span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name</span><br><span class="line">    <span class="keyword">this</span>.instance = <span class="literal">null</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Singleton.prototype.getName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Singleton.getInstance = <span class="function"><span class="keyword">function</span>(<span class="params"> name </span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>( !<span class="keyword">this</span>.instance )&#123;</span><br><span class="line">        <span class="keyword">this</span>.instance = <span class="keyword">new</span> Singleton( name )</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.instance</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> a = Singleton.getInstance( <span class="string">'seve1'</span> )</span><br><span class="line"><span class="keyword">var</span> b = Singleton.getInstance( <span class="string">'seve2'</span> )</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log( a===b )</span><br><span class="line"><span class="built_in">console</span>.log(b.getName())</span><br></pre></td></tr></table></figure>
+<h3 id="透明的单例模式"><a href="#透明的单例模式" class="headerlink" title="透明的单例模式"></a>透明的单例模式</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> CreatDiv = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"><span class="keyword">var</span> instance</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> CreatDiv = <span class="function"><span class="keyword">function</span>(<span class="params"> html </span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>( instance )&#123;</span><br><span class="line">            <span class="keyword">return</span> instance</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">this</span>.html = html</span><br><span class="line">        <span class="keyword">this</span>.init()</span><br><span class="line">        <span class="keyword">return</span> instance = <span class="keyword">this</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    CreatDiv.prototype.init = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> div = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>)</span><br><span class="line">        div.innerHTML = <span class="keyword">this</span>.html</span><br><span class="line">        <span class="built_in">document</span>.body.appendChild( div )</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> CreatDiv</span><br><span class="line">&#125;)()</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> CreatDiv(<span class="string">'seve1'</span>)</span><br><span class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> CreatDiv(<span class="string">'seve2'</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(a === b)</span><br></pre></td></tr></table></figure>
+<h3 id="代理模式实现单例模式"><a href="#代理模式实现单例模式" class="headerlink" title="代理模式实现单例模式"></a>代理模式实现单例模式</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> CreatDiv = <span class="function"><span class="keyword">function</span>(<span class="params"> html </span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.html = html</span><br><span class="line">    <span class="keyword">this</span>.init()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">CreatDiv.prototype.init = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> div = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>)</span><br><span class="line">    div.innerHTML = <span class="keyword">this</span>.html</span><br><span class="line">    <span class="built_in">document</span>.body.appendChild( div )</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 引入代理类</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> ProxySingletonCreatDiv = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> instance</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"> html </span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!instance)&#123;</span><br><span class="line">            instance = <span class="keyword">new</span>  CreatDiv(html)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> instance</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)()</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> ProxySingletonCreatDiv(<span class="string">'seve1'</span>)</span><br><span class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> ProxySingletonCreatDiv(<span class="string">'seve2'</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log( a===b )</span><br></pre></td></tr></table></figure>
+<h3 id="javaScript的简单单例模式"><a href="#javaScript的简单单例模式" class="headerlink" title="javaScript的简单单例模式"></a>javaScript的简单单例模式</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> MyApp = &#123;&#125;</span><br><span class="line"></span><br><span class="line">MyApp.namespace = <span class="function"><span class="keyword">function</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> parts = name.split(<span class="string">'.'</span>)</span><br><span class="line">    <span class="keyword">var</span> current = MyApp</span><br><span class="line">    <span class="keyword">for</span>( <span class="keyword">var</span> i <span class="keyword">in</span> parts )&#123;</span><br><span class="line">        <span class="keyword">if</span>(!current[ parts[ i ] ])&#123;</span><br><span class="line">            current[ parts[i] ] =&#123;&#125;</span><br><span class="line">        &#125;</span><br><span class="line">        current = current[ parts[ i ] ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">MyApp.namespace( <span class="string">'event'</span> )</span><br><span class="line">MyApp.namespace( <span class="string">'dom.style'</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(MyApp)</span><br></pre></td></tr></table></figure>
+<h3 id="惰性单例"><a href="#惰性单例" class="headerlink" title="惰性单例"></a>惰性单例</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Singleton = <span class="function"><span class="keyword">function</span>(<span class="params"> name </span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Singleton.prototype.getName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Singleton.getInstance = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> instance = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>( !instance )&#123;</span><br><span class="line">            instance = <span class="keyword">new</span> Singleton( name )</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> instance</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> Singleton(<span class="string">'haha'</span>)</span><br><span class="line"></span><br><span class="line">a.getName()</span><br></pre></td></tr></table></figure>
+<h3 id="惰性单例-1"><a href="#惰性单例-1" class="headerlink" title="惰性单例"></a>惰性单例</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Singleton = <span class="function"><span class="keyword">function</span>(<span class="params"> name </span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Singleton.prototype.getName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Singleton.getInstance = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> instance = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>( !instance )&#123;</span><br><span class="line">            instance = <span class="keyword">new</span> Singleton( name )</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> instance</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> Singleton(<span class="string">'haha'</span>)</span><br><span class="line"></span><br><span class="line">a.getName()</span><br></pre></td></tr></table></figure>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/03/30/设计模式-单例模式/" data-id="cjfdevhb0000al8w0snc9wgcx" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/03/30/设计模式-单例模式的简单应用/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          设计模式-单例模式的简单应用
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/03/29/JavaScript中的所有事件/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">JavaScript中的所有事件</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+  
+    <!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zNTE0Ny8xMTY4Mg==">
+<script type="text/javascript">
+    (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+
+        if (typeof LivereTower === 'function') { return; }
+
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+
+        e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+</script>
+<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+  
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title">Illusory</h1>
+    <h2 class="blog-subtitle">随便点点吧</h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="/images/daniel-lij.png">
+    <h2 class="author">daniel-lij</h2>
+    <h3 class="description">( ゜- ゜)つロ 干杯</h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>7</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>8</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>4</strong><br>标签</div></a>
+    </div>
+
+
+
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="http://github.com/daniel-lij" target="_blank" title="Github">
+          Github
+        </a>
+      
+    </div>
+
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+        <a class="hvr-bounce-in" href="http://www.bilibili.com/" target="_blank" title="哔哩哔哩">
+          哔哩哔哩
+        </a>
+      
+    </div>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2017 - 2018 daniel-lij<br>
+      
+    </div>
+    
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>
+
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?e877bc3e8ff50a8141da8ea2f7c0800f";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+  })();
+  </script>
+
+
+  <link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+  <script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
+  <script src="/plugin/galmenu/GalMenu.js"></script>
+  <div class="GalMenu GalDropDown">
+      <div class="circle" id="gal">
+        <div class="ring">
+          
+            <a href="/" title="" class="menuItem">首页</a>
+          
+            <a href="/tags" title="" class="menuItem">标签</a>
+          
+            <a href="/categories" title="" class="menuItem">分类</a>
+          
+            <a href="/archives" title="" class="menuItem">归档</a>
+          
+        </div>
+        
+          <audio id="audio" src="plugin/galmenu/wulusai.mp3"></audio>
+        
+      </div> 
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
+    for (var i = 0,
+    l = items.length; i < l; i++) {
+      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+    }</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('body').GalMenu({
+      'menu': 'GalDropDown'
+    })
+  });
+</script>
+
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li>
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
