@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>策略模式-为文本框添加多种验证 | Illusory</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="策略模式为文本框添加多种验证123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="策略模式-为文本框添加多种验证">
+<meta property="og:url" content="http://yoursite.com/2018/03/30/策略模式-为文本框添加多种验证/index.html">
+<meta property="og:site_name" content="Illusory">
+<meta property="og:description" content="策略模式为文本框添加多种验证123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-03-30T07:26:02.787Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="策略模式-为文本框添加多种验证">
+<meta name="twitter:description" content="策略模式为文本框添加多种验证123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979">
+  
+    <link rel="alternate" href="/atom.xml" title="Illusory" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/daniel-lij.ico">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/plugin/bganimation/bg.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="/images/daniel-lij.png">
+    <h2 class="author">daniel-lij</h2>
+    <h3 class="description">( ゜- ゜)つロ 干杯</h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>11</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>14</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>3</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+        <section id="main"><article id="post-策略模式-为文本框添加多种验证" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/30/策略模式-为文本框添加多种验证/" class="article-date">
+  <time class="post-time" datetime="2018-03-30T07:23:43.000Z" itemprop="datePublished">
+    <span class="post-month">3月</span><br/>
+    <span class="post-day">30</span>
+  </time>
+</a>
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      策略模式-为文本框添加多种验证
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JavaScript设计模式/">JavaScript设计模式</a>,<a class="article-category-link" href="/categories/JavaScript设计模式/策略模式为文本框添加多种验证/">策略模式为文本框添加多种验证</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+        
+          <h3 id="策略模式为文本框添加多种验证"><a href="#策略模式为文本框添加多种验证" class="headerlink" title="策略模式为文本框添加多种验证"></a>策略模式为文本框添加多种验证</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"en"</span>&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">    &lt;meta name=<span class="string">"viewport"</span> content=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span><br><span class="line">    &lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"ie=edge"</span>&gt;</span><br><span class="line">    &lt;title&gt;复杂表单验证&lt;<span class="regexp">/title&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;form action=<span class="string">""</span> id=<span class="string">"registerForm"</span> mothod=<span class="string">"post"</span>&gt;</span><br><span class="line">        请输入用户名: &lt;input type="text" name="userName"/&gt;</span><br><span class="line">        请输入密码: &lt;input type="text" name="password"/&gt;</span><br><span class="line">        请输入手机号码: &lt;input type="text" name="phoneNumber"/&gt;</span><br><span class="line">        &lt;button&gt;提交&lt;/button&gt;</span><br><span class="line">    &lt;/form&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        var strategies = &#123;</span><br><span class="line">            isNonEmpty: function(value, errorMsg)&#123;</span><br><span class="line">                if(value === '')&#123;</span><br><span class="line">                    return errorMsg</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            minLength: function(value, length, errorMsg)&#123;</span><br><span class="line">                if(value.length &lt; length)&#123;</span><br><span class="line">                    return errorMsg</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            isMobile: function(value , errorMsg)&#123;</span><br><span class="line">                if(!/(1^[3][5][8][0-9]&#123;9&#125;$)/.test(value))&#123;</span><br><span class="line">                    return errorMsg</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        var Varlidator = function()&#123;</span><br><span class="line">            this.cache = [] </span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Varlidator.prototype.add = function(dom, rules)&#123;</span><br><span class="line">            var self = this</span><br><span class="line">            for( var i = 0, rule; rule = rules[i++];)&#123;</span><br><span class="line">                (function(rule)&#123;</span><br><span class="line">                    var strategyAry = rule.strategy.split( ':' )</span><br><span class="line">                    var errorMsg = rule.errorMsg</span><br><span class="line">                    self.cache.push(function()&#123;</span><br><span class="line">                        var strategy = strategyAry.shift()</span><br><span class="line">                        strategyAry.unshift( dom.value )</span><br><span class="line">                        strategyAry.push( errorMsg )</span><br><span class="line">                        return strategies[ strategy ].apply( dom, strategyAry )</span><br><span class="line">                    &#125;)</span><br><span class="line">                &#125;)(rule)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Varlidator.prototype.start = function()&#123;</span><br><span class="line">            for( var i=0, validataFunc; validataFunc = this.cache[ i++ ];)&#123;</span><br><span class="line">                var errorMsg = validataFunc()</span><br><span class="line">                if( errorMsg )&#123;</span><br><span class="line">                    alert(errorMsg)</span><br><span class="line">                    return errorMsg</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        /****************************** 客户端调用代码         ********************************/</span><br><span class="line"></span><br><span class="line">        var registerForm = document.getElementById('registerForm')</span><br><span class="line"></span><br><span class="line">        var validataFunc = function()&#123;</span><br><span class="line">            var varlidator = new Varlidator()</span><br><span class="line">            varlidator.add(registerForm.userName, [&#123;</span><br><span class="line">                strategy : 'isNonEmpty',</span><br><span class="line">                errorMsg : '用户名不能为空'</span><br><span class="line">            &#125;,&#123;</span><br><span class="line">                strategy : 'minLength:10',</span><br><span class="line">                errorMsg : '用户名长度不能少于10位'</span><br><span class="line">            &#125;])</span><br><span class="line">            varlidator.add(registerForm.password,[&#123;</span><br><span class="line">                strategy : 'minLength:6',</span><br><span class="line">                errorMsg : '密码长度不能少于6位'</span><br><span class="line">            &#125;])</span><br><span class="line">            varlidator.add(registerForm.phoneNumber, [&#123;</span><br><span class="line">                strategy : 'isMobile', </span><br><span class="line">                errorMsg : '手机号码格式不正确'</span><br><span class="line">            &#125;])</span><br><span class="line">            var errorMsg = varlidator.start()</span><br><span class="line">            return errorMsg</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        registerForm.onsubmit = function()&#123;</span><br><span class="line">            var errorMsg = validataFunc()</span><br><span class="line">            if(errorMsg)&#123;</span><br><span class="line">                alert(errorMsg)</span><br><span class="line">                return false</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/03/30/策略模式-为文本框添加多种验证/" data-id="cjfdmka6n000wacw0glaodw2m" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/03/30/策略模式-动画/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          策略模式-动画
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/03/30/设计模式-策略模式表单应用/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">设计模式-策略模式表单应用</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+  
+    <!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zNTE0Ny8xMTY4Mg==">
+<script type="text/javascript">
+    (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+
+        if (typeof LivereTower === 'function') { return; }
+
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+
+        e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+</script>
+<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+  
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title">Illusory</h1>
+    <h2 class="blog-subtitle">随便点点吧</h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="/images/daniel-lij.png">
+    <h2 class="author">daniel-lij</h2>
+    <h3 class="description">( ゜- ゜)つロ 干杯</h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>11</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>14</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>3</strong><br>标签</div></a>
+    </div>
+
+
+
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="http://github.com/daniel-lij" target="_blank" title="Github">
+          Github
+        </a>
+      
+    </div>
+
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+        <a class="hvr-bounce-in" href="http://www.bilibili.com/" target="_blank" title="哔哩哔哩">
+          哔哩哔哩
+        </a>
+      
+    </div>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2017 - 2018 daniel-lij<br>
+      
+    </div>
+    
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>
+
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?e877bc3e8ff50a8141da8ea2f7c0800f";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+  })();
+  </script>
+
+
+  <link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+  <script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
+  <script src="/plugin/galmenu/GalMenu.js"></script>
+  <div class="GalMenu GalDropDown">
+      <div class="circle" id="gal">
+        <div class="ring">
+          
+            <a href="/" title="" class="menuItem">首页</a>
+          
+            <a href="/tags" title="" class="menuItem">标签</a>
+          
+            <a href="/categories" title="" class="menuItem">分类</a>
+          
+            <a href="/archives" title="" class="menuItem">归档</a>
+          
+        </div>
+        
+          <audio id="audio" src="plugin/galmenu/wulusai.mp3"></audio>
+        
+      </div> 
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
+    for (var i = 0,
+    l = items.length; i < l; i++) {
+      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+    }</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('body').GalMenu({
+      'menu': 'GalDropDown'
+    })
+  });
+</script>
+
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li>
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
