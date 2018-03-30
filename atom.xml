@@ -102,7 +102,7 @@
     <link href="http://yoursite.com/2018/03/29/JavaScript%E4%B8%AD%E7%9A%84%E6%89%80%E6%9C%89%E4%BA%8B%E4%BB%B6/"/>
     <id>http://yoursite.com/2018/03/29/JavaScript中的所有事件/</id>
     <published>2018-03-29T09:20:06.000Z</published>
-    <updated>2018-03-30T07:14:49.808Z</updated>
+    <updated>2018-03-30T07:16:01.973Z</updated>
     
     <content type="html"><![CDATA[<h2 id="JavaScript-事件参考手册"><a href="#JavaScript-事件参考手册" class="headerlink" title="JavaScript 事件参考手册"></a>JavaScript 事件参考手册</h2><h3 id="事件通常与函数配合使用，这样就可以通过发生的事件来驱动函数执行。"><a href="#事件通常与函数配合使用，这样就可以通过发生的事件来驱动函数执行。" class="headerlink" title="事件通常与函数配合使用，这样就可以通过发生的事件来驱动函数执行。"></a>事件通常与函数配合使用，这样就可以通过发生的事件来驱动函数执行。</h3><hr><h3 id="事件句柄"><a href="#事件句柄" class="headerlink" title="事件句柄"></a>事件句柄</h3><p>HTML 4.0 的新特性之一是有能力使 HTML 事件触发浏览器中的动作（action），比如当用户点击某个 HTML 元素时启动一段 JavaScript。下面是一个属性列表，这些属性可插入 HTML 标签来定义事件动作。</p><p><img src="/images/events.jpg" alt="JavaScript中的所有事件"></p>]]></content>
     
