@@ -4,9 +4,9 @@
 
 # Site
 title: Illusory
-subtitle: A technical blog for comparison
-description: 博客记录本人的技术之路以及一部分生活
-author: old liao
+subtitle: 随便点点吧
+description: ( ゜- ゜)つロ 干杯
+author: daniel-lij
 language: zh-CN
 timezone: Asia/Shanghai
 
@@ -72,14 +72,14 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: hexo-theme-Claudia
+theme: shana
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
-type: git
-  repository: git@coding.net/daniel-lij/old_liao.git #在仓库找到该仓库的ssh
-  branch: github-pages #分支，这里为github-pages
-
+deploy:
+  type: git
+  repository: git@github.com:daniel-lij/daniel-lij.github.io.git #在仓库找到该仓库的ssh
+  branch: master
 
 # Social links
 social:
