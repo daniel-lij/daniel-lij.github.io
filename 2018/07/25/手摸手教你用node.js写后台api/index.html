@@ -3,25 +3,25 @@
 <head>
   <meta charset="utf-8">
   
-  <title>手摸手教你用node.js写后台api | Illusory</title>
+  <title>手摸手教你用node.js写后台api(1) | Illusory</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="文中代码测试网站 &amp;nbsp;&amp;nbsp;[文中代码测试网站地址]文中代码github地址 &amp;nbsp;&amp;nbsp;[文中代码github地址]1.在文件夹中用cmd中初始化一个项目(推荐使用Conemu)12&amp;lt;!-- 产生一个package.json文件 --&amp;gt;npm init 2.安装express,在根目录下创建一个server.js文件1npm install express">
+  <meta name="description" content="文中代码github地址 &amp;nbsp;&amp;nbsp;[文中代码github地址]1.在文件夹中用cmd中初始化一个项目(推荐使用Conemu)12&amp;lt;!-- 产生一个package.json文件 --&amp;gt;npm init 2.安装express,在根目录下创建一个server.js文件1npm install express 123456789101112131415&amp;lt;!-- 引入no">
 <meta name="keywords" content="node">
 <meta property="og:type" content="article">
-<meta property="og:title" content="手摸手教你用node.js写后台api">
+<meta property="og:title" content="手摸手教你用node.js写后台api(1)">
 <meta property="og:url" content="http://yoursite.com/2018/07/25/手摸手教你用node.js写后台api/index.html">
 <meta property="og:site_name" content="Illusory">
-<meta property="og:description" content="文中代码测试网站 &amp;nbsp;&amp;nbsp;[文中代码测试网站地址]文中代码github地址 &amp;nbsp;&amp;nbsp;[文中代码github地址]1.在文件夹中用cmd中初始化一个项目(推荐使用Conemu)12&amp;lt;!-- 产生一个package.json文件 --&amp;gt;npm init 2.安装express,在根目录下创建一个server.js文件1npm install express">
+<meta property="og:description" content="文中代码github地址 &amp;nbsp;&amp;nbsp;[文中代码github地址]1.在文件夹中用cmd中初始化一个项目(推荐使用Conemu)12&amp;lt;!-- 产生一个package.json文件 --&amp;gt;npm init 2.安装express,在根目录下创建一个server.js文件1npm install express 123456789101112131415&amp;lt;!-- 引入no">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/images/node/get.png">
 <meta property="og:image" content="http://yoursite.com/images/node/post.png">
 <meta property="og:image" content="http://yoursite.com/images/node/带正确id.png">
 <meta property="og:image" content="http://yoursite.com/images/node/patch.png">
 <meta property="og:image" content="http://yoursite.com/images/node/delete.png">
-<meta property="og:updated_time" content="2018-07-25T09:15:39.804Z">
+<meta property="og:updated_time" content="2018-07-25T09:19:12.113Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="手摸手教你用node.js写后台api">
-<meta name="twitter:description" content="文中代码测试网站 &amp;nbsp;&amp;nbsp;[文中代码测试网站地址]文中代码github地址 &amp;nbsp;&amp;nbsp;[文中代码github地址]1.在文件夹中用cmd中初始化一个项目(推荐使用Conemu)12&amp;lt;!-- 产生一个package.json文件 --&amp;gt;npm init 2.安装express,在根目录下创建一个server.js文件1npm install express">
+<meta name="twitter:title" content="手摸手教你用node.js写后台api(1)">
+<meta name="twitter:description" content="文中代码github地址 &amp;nbsp;&amp;nbsp;[文中代码github地址]1.在文件夹中用cmd中初始化一个项目(推荐使用Conemu)12&amp;lt;!-- 产生一个package.json文件 --&amp;gt;npm init 2.安装express,在根目录下创建一个server.js文件1npm install express 123456789101112131415&amp;lt;!-- 引入no">
 <meta name="twitter:image" content="http://yoursite.com/images/node/get.png">
   
     <link rel="alternate" href="/atom.xml" title="Illusory" type="application/atom+xml">
@@ -91,7 +91,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      手摸手教你用node.js写后台api
+      手摸手教你用node.js写后台api(1)
     </h1>
   
 
@@ -112,7 +112,7 @@
       
         
         
-          <h2 id="文中代码测试网站-nbsp-nbsp-文中代码测试网站地址"><a href="#文中代码测试网站-nbsp-nbsp-文中代码测试网站地址" class="headerlink" title="文中代码测试网站 &nbsp;&nbsp;[文中代码测试网站地址]"></a>文中代码测试网站 &nbsp;&nbsp;<a href="https://codepen.io/pen/" target="_blank" rel="noopener">[文中代码测试网站地址]</a></h2><h2 id="文中代码github地址-nbsp-nbsp-文中代码github地址"><a href="#文中代码github地址-nbsp-nbsp-文中代码github地址" class="headerlink" title="文中代码github地址 &nbsp;&nbsp;[文中代码github地址]"></a>文中代码github地址 &nbsp;&nbsp;<a href="https://github.com/daniel-lij/write-the-api-interface-with-node/tree/master/node-rest-shop" target="_blank" rel="noopener">[文中代码github地址]</a></h2><h4 id="1-在文件夹中用cmd中初始化一个项目-推荐使用Conemu"><a href="#1-在文件夹中用cmd中初始化一个项目-推荐使用Conemu" class="headerlink" title="1.在文件夹中用cmd中初始化一个项目(推荐使用Conemu)"></a>1.在文件夹中用cmd中初始化一个项目(推荐使用Conemu)</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 产生一个package.json文件 --&gt;</span><br><span class="line">npm init</span><br></pre></td></tr></table></figure>
+          <h2 id="文中代码github地址-nbsp-nbsp-文中代码github地址"><a href="#文中代码github地址-nbsp-nbsp-文中代码github地址" class="headerlink" title="文中代码github地址 &nbsp;&nbsp;[文中代码github地址]"></a>文中代码github地址 &nbsp;&nbsp;<a href="https://github.com/daniel-lij/write-the-api-interface-with-node/tree/master/node-rest-shop" target="_blank" rel="noopener">[文中代码github地址]</a></h2><h4 id="1-在文件夹中用cmd中初始化一个项目-推荐使用Conemu"><a href="#1-在文件夹中用cmd中初始化一个项目-推荐使用Conemu" class="headerlink" title="1.在文件夹中用cmd中初始化一个项目(推荐使用Conemu)"></a>1.在文件夹中用cmd中初始化一个项目(推荐使用Conemu)</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 产生一个package.json文件 --&gt;</span><br><span class="line">npm init</span><br></pre></td></tr></table></figure>
 <h4 id="2-安装express-在根目录下创建一个server-js文件"><a href="#2-安装express-在根目录下创建一个server-js文件" class="headerlink" title="2.安装express,在根目录下创建一个server.js文件"></a>2.安装express,在根目录下创建一个server.js文件</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install express</span><br></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 引入node内置http中间件 --&gt;</span><br><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>)</span><br><span class="line">&lt;!-- 导入app.js文件 --&gt;</span><br><span class="line"><span class="keyword">const</span> app = <span class="built_in">require</span>(<span class="string">'./app'</span>)</span><br><span class="line"></span><br><span class="line">&lt;!-- 设置端口号, 环境变量中端口号 或者 自己设置的端口号 --&gt;</span><br><span class="line"><span class="keyword">const</span> port = process.env.PORT || <span class="number">3000</span></span><br><span class="line"></span><br><span class="line">&lt;!-- 用内置http中间件创造一个服务器,将app文件跑在node服务器上 --&gt;</span><br><span class="line"><span class="keyword">const</span> server = http.createServer(app)</span><br><span class="line"></span><br><span class="line">&lt;!-- 监听端口 --&gt;</span><br><span class="line">server.listen(port, ()=&gt;&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`数据库连接成功, 端口: <span class="subst">$&#123;port&#125;</span>`</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <h4 id="2-在根目录下创建一个app-js文件"><a href="#2-在根目录下创建一个app-js文件" class="headerlink" title="2.在根目录下创建一个app.js文件"></a>2.在根目录下创建一个app.js文件</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 引入express后端框架</span></span><br><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>)</span><br><span class="line"><span class="keyword">const</span> app = express()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 引入后端构造的商品products文件 </span></span><br><span class="line"><span class="keyword">const</span> productRoutes = <span class="built_in">require</span>(<span class="string">'./api/routes/products'</span>)</span><br><span class="line"><span class="comment">// 引入后端构造的订单orders文件</span></span><br><span class="line"><span class="keyword">const</span> ordersRoutes = <span class="built_in">require</span>(<span class="string">'./api/routes/orders'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// app中使用products和orders,并指定路径</span></span><br><span class="line">app.use(<span class="string">'/products'</span>, productRoutes)</span><br><span class="line">app.use(<span class="string">'/orders'</span>, ordersRoutes)</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = app</span><br></pre></td></tr></table></figure>
@@ -150,7 +150,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/25/手摸手教你用node.js写后台api/" data-id="cjk0x06pq000tv8w0y3jd4dz7" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2018/07/25/手摸手教你用node.js写后台api/" data-id="cjk0x3oi0000n8ww0xnkpq25c" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li></ul>
