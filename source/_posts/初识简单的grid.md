@@ -6,7 +6,7 @@ tags:
 categories: [CSS,grid布局]
 ---
 
-> * 文中代码测试网站 &nbsp;&nbsp;[[文中代码测试网站地址]](https://codepen.io/pen/)
+## 文中代码测试网站 &nbsp;&nbsp;[[文中代码测试网站地址]](https://codepen.io/pen/)
 
 ## grid布局概述
 
@@ -57,10 +57,10 @@ categories: [CSS,grid布局]
 }
 ```
 
-##网格轨道
+## 网格轨道
 
-####在grid中我们通过 grid-template-columns 和 grid-template-rows 属性来定义网格中的行和列\
-####先固定宽度 
+#### 在grid中我们通过 grid-template-columns 和 grid-template-rows 属性来定义网格中的行和列\
+#### 先固定宽度 
 
 ```html
 <!-- HTML -->
@@ -266,4 +266,142 @@ categories: [CSS,grid布局]
 ```
 
 
-### 未完待续
+#### 网格间距:在两个网格单元之间的 网格横向间距  或 网格纵向间距  可使用 grid-column-gap 和 grid-row-gap 属性来创建，或者直接使用两个合并的缩写形式 grid-gap
+
+![](/images/文章图片/grid-gap.png)
+
+```html
+<!-- HTML -->
+<div class="wrapper">
+    <div>One</div>
+    <div>Two</div>
+    <div>Three</div>
+    <div>Four</div>
+    <div>Five</div>
+</div>
+```
+
+```css
+/* CSS */
+* {box-sizing: border-box;}
+.wrapper{
+    border: 2px solid #f76707;
+    border-radius: 5px;
+    background-color: #fff4e6;
+}
+.wrapper div{
+    border: 2px solid #ffa94d;
+    border-radius: 5px;
+    background-color: #ffd8a8;
+    padding: 1em;
+    color: #d9480f;
+}
+
+.wrapper { 
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 1em;
+}
+```
+
+#### 嵌套网格: 一个网格元素可以也成为一个网格容器,当这些元素不是网格容器的直接子级元素时，它们不会参与到网格布局中，并显示为正常的文档流
+
+![](/images/文章图片/flex-z-index.png)
+
+```html
+<!-- HTML -->
+<div class="wrapper">
+    <div class="box box1">
+        <div class="nested">a</div>
+        <div class="nested">b</div>
+        <div class="nested">c</div>
+    </div>
+    <div class="box box2">Two</div>
+    <div class="box box3">Three</div>
+    <div class="box box4">Four</div>
+    <div class="box box5">Five</div>
+</div>
+```
+
+```css
+/* CSS */
+* {box-sizing: border-box;}
+.wrapper{
+    border: 2px solid #f76707;
+    border-radius: 5px;
+    background-color: #fff4e6;
+}
+.wrapper div{
+    border: 2px solid #ffa94d;
+    border-radius: 5px;
+    background-color: #ffd8a8;
+    padding: 1em;
+    color: #d9480f;
+}
+
+.wrapper {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   grid-auto-rows: 100px;
+}
+
+.box1 {
+   grid-column-start: 1;
+   grid-column-end: 4;
+   grid-row-start: 1;
+   grid-row-end: 3;
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+}
+```
+
+#### 使用z-index控制层级:多个网格项目可以占用同一个网格单位。如果我们回到之前根据网格线编号放置网格项目的话，我们可以更改此项来使两个网格项目重叠。
+
+![](/images/文章图片/flex-z-index.png)
+
+```html
+<!-- HTML -->
+<div class="wrapper">
+   <div class="box box1">One</div>
+   <div class="box box2">Two</div>
+   <div class="box box3">Three</div>
+   <div class="box box4">Four</div>
+   <div class="box box5">Five</div>
+</div>
+```
+
+```css
+/* CSS */
+* {box-sizing: border-box;}
+.wrapper{
+    border: 2px solid #f76707;
+    border-radius: 5px;
+    background-color: #fff4e6;
+}
+.wrapper div{
+    border: 2px solid #ffa94d;
+    border-radius: 5px;
+    background-color: #ffd8a8;
+    padding: 1em;
+    color: #d9480f;
+}
+
+.wrapper {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   grid-auto-rows: 100px;
+}
+.box1 {
+   grid-column-start: 1;
+   grid-column-end: 4;
+   grid-row-start: 1;
+   grid-row-end: 3;
+   z-index: 2;
+}
+.box2 {
+   grid-column-start: 1;
+   grid-row-start: 2;
+   grid-row-end: 4;
+   z-index: 1;
+}
