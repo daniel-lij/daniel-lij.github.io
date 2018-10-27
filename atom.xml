@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-07-27T09:25:44.583Z</updated>
+  <updated>2018-10-27T03:57:24.093Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JavaScript开发底层原理-Call Stack(1)</title>
+    <link href="http://yoursite.com/2018/10/27/JavaScript%E5%BC%80%E5%8F%91%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86-1/"/>
+    <id>http://yoursite.com/2018/10/27/JavaScript开发底层原理-1/</id>
+    <published>2018-10-27T03:27:20.000Z</published>
+    <updated>2018-10-27T03:57:24.093Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Call-Stack"><a href="#Call-Stack" class="headerlink" title="Call Stack"></a>Call Stack</h2><h4 id="调用栈是解析器-如浏览器中的的javascript解析器-的一种机制，可以在脚本调用多个函数时，跟踪每个函数在完成执行时应该返回控制的点。（如什么函数正在执行，什么函数被这个函数调用，下一个调用的函数是谁）"><a href="#调用栈是解析器-如浏览器中的的javascript解析器-的一种机制，可以在脚本调用多个函数时，跟踪每个函数在完成执行时应该返回控制的点。（如什么函数正在执行，什么函数被这个函数调用，下一个调用的函数是谁）" class="headerlink" title="调用栈是解析器(如浏览器中的的javascript解析器)的一种机制，可以在脚本调用多个函数时，跟踪每个函数在完成执行时应该返回控制的点。（如什么函数正在执行，什么函数被这个函数调用，下一个调用的函数是谁）"></a>调用栈是解析器(如浏览器中的的javascript解析器)的一种机制，可以在脚本调用多个函数时，跟踪每个函数在完成执行时应该返回控制的点。（如什么函数正在执行，什么函数被这个函数调用，下一个调用的函数是谁）</h4><blockquote><ul><li>当脚本要调用一个函数时，解析器把该函数添加到栈中并且执行这个函数</li><li>任何被这个函数调用的函数会进一步添加到调用栈中，并且运行到它们被上个程序调用的位置。</li><li>当函数运行结束后，解释器将它从堆栈中取出，并在主代码列表中继续执行代码。</li><li>如果栈占用的空间比分配给它的空间还大，那么则会导致“栈溢出”错误。</li></ul></blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">greeting</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    sayHi();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHi</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"Hi!"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用 `greeting` 方法</span></span><br><span class="line">greeting();</span><br></pre></td></tr></table></figure><h4 id="执行过程"><a href="#执行过程" class="headerlink" title="执行过程"></a>执行过程</h4><ul><li>1.忽略所有的方法, 直到到达 greeting()方法.</li><li>2.调用 greeting() 方法.</li><li>3.把 <code>greeting</code> 方法加入调用栈列表。</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">调用栈列表:</span><br><span class="line">- greeting</span><br></pre></td></tr></table></figure><ul><li>4.执行 <code>greeting</code> 方法中的所有代码行。</li><li>5.到达 sayHi() 方法。</li><li>6.把 sayHi() 方法加入调用栈列表。</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">调用栈列表:</span><br><span class="line">- greeting</span><br><span class="line">- sayHi</span><br></pre></td></tr></table></figure><ul><li>7.执行 sayHi() 函数中的所有代码行，直到结束。</li><li>8.将执行返回到调用 sayHi() 的行，并继续执行 greeting() 函数的其余部分。</li><li>9.把 sayHi() 方法从调用栈列表中删除。</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">调用栈列表:</span><br><span class="line">- greeting</span><br></pre></td></tr></table></figure><ul><li>10.当 greeting() 函数中的所有内容都执行完之后，返回到它的调用行继续执行其余的JS代码。</li><li>11.把 greeting() 方法从调用栈列表中删除。</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">调用栈列表:</span><br><span class="line">空</span><br></pre></td></tr></table></figure><h6 id="我们从一个空的调用栈开始，当我们调用一个函数时，它会自动添加到调用栈中，在执行完所有代码之后，它会自动从调用栈中删除。最后，我们也得到了一个空栈。"><a href="#我们从一个空的调用栈开始，当我们调用一个函数时，它会自动添加到调用栈中，在执行完所有代码之后，它会自动从调用栈中删除。最后，我们也得到了一个空栈。" class="headerlink" title="我们从一个空的调用栈开始，当我们调用一个函数时，它会自动添加到调用栈中，在执行完所有代码之后，它会自动从调用栈中删除。最后，我们也得到了一个空栈。"></a>我们从一个空的调用栈开始，当我们调用一个函数时，它会自动添加到调用栈中，在执行完所有代码之后，它会自动从调用栈中删除。最后，我们也得到了一个空栈。</h6>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Call-Stack&quot;&gt;&lt;a href=&quot;#Call-Stack&quot; class=&quot;headerlink&quot; title=&quot;Call Stack&quot;&gt;&lt;/a&gt;Call Stack&lt;/h2&gt;&lt;h4 id=&quot;调用栈是解析器-如浏览器中的的javascript解析器-的一种机
+      
+    
+    </summary>
+    
+      <category term="javascript" scheme="http://yoursite.com/categories/javascript/"/>
+    
+      <category term="node.js" scheme="http://yoursite.com/categories/javascript/node-js/"/>
+    
+    
+      <category term="node, javaScript底层" scheme="http://yoursite.com/tags/node-javaScript%E5%BA%95%E5%B1%82/"/>
+    
+  </entry>
   
   <entry>
     <title>手摸手教你用node.js写后台api(3)</title>

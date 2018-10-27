@@ -41,9 +41,9 @@
     <h2 class="author">daniel-lij</h2>
     <h3 class="description">( ゜- ゜)つロ 干杯</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>16</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>17</strong><br>文章</div></a>
       <a href="/categories"><div><strong>21</strong><br>分类</div></a>
-      <a href="/tags"><div><strong>7</strong><br>标签</div></a>
+      <a href="/tags"><div><strong>8</strong><br>标签</div></a>
     </div>
     <ul class="blog-link">
      
@@ -68,6 +68,66 @@
 </div>
 
         <section id="main">
+  
+    <article id="post-设计模式-单例模式的简单应用" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/30/设计模式-单例模式的简单应用/" class="article-date">
+  <time class="post-time" datetime="2018-03-30T03:42:43.000Z" itemprop="datePublished">
+    <span class="post-month">3月</span><br/>
+    <span class="post-day">30</span>
+  </time>
+</a>
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/30/设计模式-单例模式的简单应用/">设计模式-单例模式的简单应用</a>
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JavaScript设计模式/">JavaScript设计模式</a>,<a class="article-category-link" href="/categories/JavaScript设计模式/单例模式的简单应用/">单例模式的简单应用</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+        
+          <h3 id="实现QQ登陆框"><a href="#实现QQ登陆框" class="headerlink" title="实现QQ登陆框"></a>实现QQ登陆框</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">    &lt;html lang=<span class="string">"en"</span>&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">        &lt;meta name=<span class="string">"viewport"</span> content=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span><br><span class="line">        &lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"ie=edge"</span>&gt;</span><br><span class="line">        &lt;title&gt;QQ登陆&lt;<span class="regexp">/title&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;button id=<span class="string">"loginBtn"</span>&gt;登陆&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>body&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        <span class="comment">// 1.进入页面创建dom</span></span><br><span class="line">        <span class="keyword">var</span> loginLayer = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">var</span> div = <span class="built_in">document</span>.createElement( <span class="string">'div'</span> )</span><br><span class="line">            div.innerHTML = <span class="string">'我是登陆框'</span></span><br><span class="line">            div.style.display = <span class="string">'none'</span></span><br><span class="line">            <span class="built_in">document</span>.body.appendChild(div)</span><br><span class="line">            <span class="keyword">return</span> div</span><br><span class="line">        &#125;)()</span><br><span class="line"></span><br><span class="line">        <span class="built_in">document</span>.getElementById(<span class="string">'loginBtn'</span>).onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            loginLayer.style.display = <span class="string">'block'</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 2.点击登入创建dom</span></span><br><span class="line">        <span class="keyword">var</span> creatLoginLayer = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">var</span> div = <span class="built_in">document</span>.createElement( <span class="string">'div'</span> )</span><br><span class="line">            div.innerHTML = <span class="string">'我是登陆框'</span></span><br><span class="line">            div.style.display = <span class="string">'none'</span></span><br><span class="line">            <span class="built_in">document</span>.body.appendChild(div)</span><br><span class="line">            <span class="keyword">return</span> div</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">document</span>.getElementById(<span class="string">'loginBtn'</span>).onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">var</span> loginLayer = creatLoginLayer()</span><br><span class="line">            loginLayer.style.display = <span class="string">'block'</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 3.做一个单例的悬浮框</span></span><br><span class="line">        <span class="keyword">var</span> creatLoginLayer = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">var</span> div</span><br><span class="line">            <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                <span class="keyword">if</span>(!div)&#123;</span><br><span class="line">                    div = <span class="built_in">document</span>.createElement( <span class="string">'div'</span> )</span><br><span class="line">                    div.innerHTML = <span class="string">'我是登陆框'</span></span><br><span class="line">                    div.style.display = <span class="string">'none'</span></span><br><span class="line">                    <span class="built_in">document</span>.body.appendChild(div)</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span> div</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)()</span><br><span class="line"></span><br><span class="line">        <span class="built_in">document</span>.getElementById(<span class="string">'loginBtn'</span>).onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">var</span> loginLayer = creatLoginLayer()</span><br><span class="line">            loginLayer.style.display = <span class="string">'block'</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>html&gt;</span><br></pre></td></tr></table></figure>
+          
+            <p class="article-more-link">
+              <a href="/2018/03/30/设计模式-单例模式的简单应用/#more">Read More</a>
+            </p>
+          
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/03/30/设计模式-单例模式的简单应用/" data-id="cjnqx0lew002mj4w0it5tcy1u" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
   
     <article id="post-设计模式-单例模式" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -116,7 +176,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/30/设计模式-单例模式/" data-id="cjnqvrt690010x8w0r9ogdsob" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2018/03/30/设计模式-单例模式/" data-id="cjnqx0lba0011j4w0p3eyaucq" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -176,7 +236,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/29/JavaScript中的所有事件/" data-id="cjnqvrt5r000cx8w05k2i0rpo" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2018/03/29/JavaScript中的所有事件/" data-id="cjnqx0l9s0002j4w06au9dypl" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -236,7 +296,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/29/初次使用MarkDown/" data-id="cjnqvrt5p000bx8w0gz71ygy6" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2018/03/29/初次使用MarkDown/" data-id="cjnqx0la80008j4w0pybkydoj" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/测试/">测试</a></li></ul>
@@ -296,7 +356,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/24/Hello World/" data-id="cjnqvrt5k0007x8w0q3p7534i" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2018/03/24/Hello World/" data-id="cjnqx0la70007j4w0484hrsex" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/测试/">测试</a></li></ul>
@@ -356,7 +416,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/24/你好 世界/" data-id="cjnqvrt5l0008x8w0uan86cbt" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2018/03/24/你好 世界/" data-id="cjnqx0lam000gj4w0pbhzospg" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/测试/">测试</a></li></ul>
@@ -416,7 +476,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/22/独立游戏制作人-陈星汉/" data-id="cjnqvrt5x000ix8w0x7849emz" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2018/03/22/独立游戏制作人-陈星汉/" data-id="cjnqx0lat000mj4w04gu2lx94" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/独立游戏/">独立游戏</a></li></ul>
@@ -473,9 +533,9 @@
     <h2 class="author">daniel-lij</h2>
     <h3 class="description">( ゜- ゜)つロ 干杯</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>16</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>17</strong><br>文章</div></a>
       <a href="/categories"><div><strong>21</strong><br>分类</div></a>
-      <a href="/tags"><div><strong>7</strong><br>标签</div></a>
+      <a href="/tags"><div><strong>8</strong><br>标签</div></a>
     </div>
 
 
