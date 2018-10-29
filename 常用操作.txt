@@ -1,0 +1,10 @@
+hexo clean 
+hexo g
+hexo d
+hexo s
+
+创建文章
+
+hexo new "文章名称"
+hexo new page tags 标签页
+hexo new page categories 分类
