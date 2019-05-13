@@ -41,7 +41,7 @@
     <h2 class="author">daniel-lij</h2>
     <h3 class="description">( ゜- ゜)つロ 干杯</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>20</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>22</strong><br>文章</div></a>
       <a href="/categories"><div><strong>24</strong><br>分类</div></a>
       <a href="/tags"><div><strong>9</strong><br>标签</div></a>
     </div>
@@ -68,6 +68,126 @@
 </div>
 
         <section id="main">
+  
+    <article id="post-作用域" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/24/作用域/" class="article-date">
+  <time class="post-time" datetime="2018-12-24T07:40:16.000Z" itemprop="datePublished">
+    <span class="post-month">12月</span><br/>
+    <span class="post-day">24</span>
+  </time>
+</a>
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/24/作用域/">函数作用域, 块级作用域和词法作用域</a>
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/javascript/">javascript</a>,<a class="article-category-link" href="/categories/javascript/node-js/">node.js</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+        
+          <h2 id="函数作用域-块级作用域和词法作用域"><a href="#函数作用域-块级作用域和词法作用域" class="headerlink" title="函数作用域, 块级作用域和词法作用域"></a>函数作用域, 块级作用域和词法作用域</h2><blockquote>
+          
+            <p class="article-more-link">
+              <a href="/2018/12/24/作用域/#more">Read More</a>
+            </p>
+          
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/12/24/作用域/" data-id="cjvlpu8m60008l0w0jevrdpyi" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-javaScript底层/">node, javaScript底层</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-call、apply和bind的实现" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/29/call、apply和bind的实现/" class="article-date">
+  <time class="post-time" datetime="2018-11-29T07:40:16.000Z" itemprop="datePublished">
+    <span class="post-month">11月</span><br/>
+    <span class="post-day">29</span>
+  </time>
+</a>
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/29/call、apply和bind的实现/">call, apply和bind的实现</a>
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/javascript/">javascript</a>,<a class="article-category-link" href="/categories/javascript/node-js/">node.js</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+        
+          <h2 id="call与apply"><a href="#call与apply" class="headerlink" title="call与apply"></a>call与apply</h2><h4 id="call与apply方法都是使用一个指定的this值和对应的参数前提下调用某个函数和方法。区别在于call是通过传多个参数的方式-而apply则是传入一个数组。"><a href="#call与apply方法都是使用一个指定的this值和对应的参数前提下调用某个函数和方法。区别在于call是通过传多个参数的方式-而apply则是传入一个数组。" class="headerlink" title="call与apply方法都是使用一个指定的this值和对应的参数前提下调用某个函数和方法。区别在于call是通过传多个参数的方式,而apply则是传入一个数组。"></a>call与apply方法都是使用一个指定的this值和对应的参数前提下调用某个函数和方法。区别在于call是通过传多个参数的方式,而apply则是传入一个数组。</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  name: <span class="string">'linxin'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params">age, sex</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.name,age,sex);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func.call(obj,<span class="number">12</span>,<span class="string">'女'</span>);         <span class="comment">// linxin 12 女</span></span><br><span class="line">func.apply(obj, [<span class="number">18</span>, <span class="string">'女'</span>]);        <span class="comment">//linxin 18 女</span></span><br></pre></td></tr></table></figure>
+          
+            <p class="article-more-link">
+              <a href="/2018/11/29/call、apply和bind的实现/#more">Read More</a>
+            </p>
+          
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/11/29/call、apply和bind的实现/" data-id="cjvlpu8nr0017l0w05ludqgcx" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-javaScript底层/">node, javaScript底层</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
   
     <article id="post-乌镇互联网大会与科技的阴暗面" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -116,7 +236,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/10/乌镇互联网大会与科技的阴暗面/" data-id="cjokrnb6n0005ycw0xbmffclp" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2018/11/10/乌镇互联网大会与科技的阴暗面/" data-id="cjvlpu8no0015l0w05mbdgnqf" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/new/">new</a></li></ul>
@@ -176,7 +296,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/10/谷歌员工大罢工，对硅谷个人主义说“不”/" data-id="cjokrnb7y0027ycw0m91t5ilb" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2018/11/10/谷歌员工大罢工，对硅谷个人主义说“不”/" data-id="cjvlpu8om0029l0w0eo5sr10p" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/new/">new</a></li></ul>
@@ -236,7 +356,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/05/JavaScript代码片段练习/" data-id="cjokrnb670001ycw06qg50wxf" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2018/11/05/JavaScript代码片段练习/" data-id="cjvlpu8m50007l0w00n55vi9l" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/个人/">个人</a></li></ul>
@@ -296,7 +416,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/27/JavaScript开发底层原理-1/" data-id="cjokrnb6n0006ycw0r77qsaiy" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2018/10/27/JavaScript开发底层原理-1/" data-id="cjvlpu8nx001el0w0bovhuway" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-javaScript底层/">node, javaScript底层</a></li></ul>
@@ -356,7 +476,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/27/手摸手教你用node.js写后台api-3/" data-id="cjokrnb7y0025ycw0vrqfiguc" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2018/07/27/手摸手教你用node.js写后台api-3/" data-id="cjvlpu8o3001jl0w0853iiq4g" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-express/">node, express</a></li></ul>
@@ -416,7 +536,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/26/手摸手教你用node.js写后台api-2/" data-id="cjokrnb7y001qycw0fva7z47o" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2018/07/26/手摸手教你用node.js写后台api-2/" data-id="cjvlpu8nz001fl0w0ej3l4o59" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-express/">node, express</a></li></ul>
@@ -476,7 +596,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/25/手摸手教你用node.js写后台api-1/" data-id="cjokrnb73000jycw0blzo4idj" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2018/07/25/手摸手教你用node.js写后台api-1/" data-id="cjvlpu8nu001bl0w0k9e2jr02" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li></ul>
@@ -536,7 +656,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/19/一些自己常用的网站/" data-id="cjokrnb6n0004ycw0gwd2i0qw" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2018/04/19/一些自己常用的网站/" data-id="cjvlpu8ly0002l0w0zh6p0i19" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/个人/">个人</a></li></ul>
@@ -549,130 +669,10 @@
 
 
   
-    <article id="post-初识简单的grid" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/04/19/初识简单的grid/" class="article-date">
-  <time class="post-time" datetime="2018-04-19T01:11:16.000Z" itemprop="datePublished">
-    <span class="post-month">4月</span><br/>
-    <span class="post-day">19</span>
-  </time>
-</a>
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/19/初识简单的grid/">初识简单的grid</a>
-    </h1>
-  
-
-        <div>
-          
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/CSS/">CSS</a>,<a class="article-category-link" href="/categories/CSS/grid布局/">grid布局</a>
-  </div>
-
-          
-              
-
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-        
-          <h2 id="文中代码测试网站-nbsp-nbsp-文中代码测试网站地址"><a href="#文中代码测试网站-nbsp-nbsp-文中代码测试网站地址" class="headerlink" title="文中代码测试网站 &nbsp;&nbsp;[文中代码测试网站地址]"></a>文中代码测试网站 &nbsp;&nbsp;<a href="https://codepen.io/pen/" target="_blank" rel="noopener">[文中代码测试网站地址]</a></h2><h2 id="grid布局概述"><a href="#grid布局概述" class="headerlink" title="grid布局概述"></a>grid布局概述</h2><h4 id="网格是一组相交的水平线和垂直线，它定义了网格的列和行。我们可以将网格元素放置在与这些行和列相关的位置上"><a href="#网格是一组相交的水平线和垂直线，它定义了网格的列和行。我们可以将网格元素放置在与这些行和列相关的位置上" class="headerlink" title="网格是一组相交的水平线和垂直线，它定义了网格的列和行。我们可以将网格元素放置在与这些行和列相关的位置上"></a>网格是一组相交的水平线和垂直线，它定义了网格的列和行。我们可以将网格元素放置在与这些行和列相关的位置上</h4><blockquote>
-          
-            <p class="article-more-link">
-              <a href="/2018/04/19/初识简单的grid/#more">Read More</a>
-            </p>
-          
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/19/初识简单的grid/" data-id="cjokrnb6n000gycw0o1z1i54s" class="article-share-link">分享</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-策略模式-动画" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/03/30/策略模式-动画/" class="article-date">
-  <time class="post-time" datetime="2018-03-30T07:25:22.000Z" itemprop="datePublished">
-    <span class="post-month">3月</span><br/>
-    <span class="post-day">30</span>
-  </time>
-</a>
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/30/策略模式-动画/">策略模式-动画</a>
-    </h1>
-  
-
-        <div>
-          
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JavaScript设计模式/">JavaScript设计模式</a>,<a class="article-category-link" href="/categories/JavaScript设计模式/策略模式动画/">策略模式动画</a>
-  </div>
-
-          
-              
-
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-        
-          <h3 id="策略模式动画"><a href="#策略模式动画" class="headerlink" title="策略模式动画"></a>策略模式动画</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"en"</span>&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">    &lt;meta name=<span class="string">"viewport"</span> content=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span><br><span class="line">    &lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"ie=edge"</span>&gt;</span><br><span class="line">    &lt;title&gt;策略模式-动画&lt;<span class="regexp">/title&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div style=<span class="string">"position: absolute; background:blue"</span> id=<span class="string">"div"</span>&gt; 我是div&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    &lt;script&gt;</span></span><br><span class="line"><span class="regexp">        var tween = &#123;</span></span><br><span class="line"><span class="regexp">            linear: function( t, b, c, d )&#123;</span></span><br><span class="line"><span class="regexp">                return c*t/</span>d + b</span><br><span class="line">            &#125;,</span><br><span class="line">            easeIn: <span class="function"><span class="keyword">function</span>(<span class="params"> t, b, c, d </span>)</span>&#123;</span><br><span class="line">                <span class="keyword">return</span> c*(t/=d)*t + b</span><br><span class="line">            &#125;,</span><br><span class="line">            strongEaseIn: <span class="function"><span class="keyword">function</span>(<span class="params"> t, b, c, d </span>)</span>&#123;</span><br><span class="line">                <span class="keyword">return</span> c*(t/=d)*t*t*t*t + b</span><br><span class="line">            &#125;,</span><br><span class="line">            strongEaseOut: <span class="function"><span class="keyword">function</span>(<span class="params"> t, b, c, d</span>)</span>&#123;</span><br><span class="line">                <span class="keyword">return</span> c*( ( t = t/d <span class="number">-1</span> )*t*t*t*t + <span class="number">1</span>) + b</span><br><span class="line">            &#125;,</span><br><span class="line">            sineaseIn: <span class="function"><span class="keyword">function</span>(<span class="params"> t, b, c, d </span>)</span>&#123;</span><br><span class="line">                <span class="keyword">return</span> c * (t/=d)*t*t +b</span><br><span class="line">            &#125;,</span><br><span class="line">            sineaseOut: <span class="function"><span class="keyword">function</span>(<span class="params"> t, b, c, d </span>)</span>&#123;</span><br><span class="line">                <span class="keyword">return</span>  c * (( t= t/d - <span class="number">1</span> ) * t * t + <span class="number">1</span>) + b</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> Animate = <span class="function"><span class="keyword">function</span>(<span class="params">dom</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.dom = dom</span><br><span class="line">            <span class="keyword">this</span>.startTime = <span class="number">0</span></span><br><span class="line">            <span class="keyword">this</span>.startPos = <span class="number">0</span></span><br><span class="line">            <span class="keyword">this</span>.endPos = <span class="number">0</span> </span><br><span class="line">            <span class="keyword">this</span>.propertyName = <span class="literal">null</span></span><br><span class="line">            <span class="keyword">this</span>.easing = <span class="literal">null</span></span><br><span class="line">            <span class="keyword">this</span>.duration = <span class="literal">null</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Animate.prototype.start = <span class="function"><span class="keyword">function</span>(<span class="params"> propertyName, endPos, duration, easing</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.startTime = +<span class="keyword">new</span> <span class="built_in">Date</span></span><br><span class="line">            <span class="keyword">this</span>.startPos = <span class="keyword">this</span>.dom.getBoundingClientRect()[propertyName]</span><br><span class="line">            <span class="keyword">this</span>.propertyName = propertyName</span><br><span class="line">            <span class="keyword">this</span>.endPos = endPos</span><br><span class="line">            <span class="keyword">this</span>.duration = duration</span><br><span class="line">            <span class="keyword">this</span>.easing = tween[ easing ]</span><br><span class="line"></span><br><span class="line">            <span class="keyword">var</span> self = <span class="keyword">this</span></span><br><span class="line">            <span class="keyword">var</span> timeId = setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                <span class="keyword">if</span>(self.step() === <span class="literal">false</span>)&#123;</span><br><span class="line">                    clearInterval( timeId )</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;, <span class="number">19</span>)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Animate.prototype.step = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">var</span> t = +<span class="keyword">new</span> <span class="built_in">Date</span>;</span><br><span class="line">            <span class="keyword">if</span>( t &gt;= <span class="keyword">this</span>.startTime + <span class="keyword">this</span>.duration )&#123;</span><br><span class="line">                <span class="keyword">this</span>.update( <span class="keyword">this</span>.endPos )</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">var</span> pos = <span class="keyword">this</span>.easing( t - <span class="keyword">this</span>.startTime, <span class="keyword">this</span>.startPos, <span class="keyword">this</span>.endPos, <span class="keyword">this</span>.startPos, <span class="keyword">this</span>.duration)</span><br><span class="line">            <span class="keyword">this</span>.update(pos)</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Animate.prototype.update = <span class="function"><span class="keyword">function</span>(<span class="params"> pos </span>)</span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.dom.style[ <span class="keyword">this</span>.propertyName ] = pos + <span class="string">'px'</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> div = <span class="built_in">document</span>.getElementById(<span class="string">'div'</span>)</span><br><span class="line">        <span class="keyword">var</span> animate = <span class="keyword">new</span> Animate(div)</span><br><span class="line">        animate.start( <span class="string">'left'</span>, <span class="number">500</span>, <span class="number">1000</span>, <span class="string">'easeIn'</span>)</span><br><span class="line">    &lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>body&gt;</span><br><span class="line">&lt;<span class="regexp">/html&gt;</span></span><br></pre></td></tr></table></figure>
-          
-            <p class="article-more-link">
-              <a href="/2018/03/30/策略模式-动画/#more">Read More</a>
-            </p>
-          
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/30/策略模式-动画/" data-id="cjokrnb7y001vycw022hrczej" class="article-share-link">分享</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">next &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">next &raquo;</a>
   </nav>
 </section>
         
@@ -713,7 +713,7 @@
     <h2 class="author">daniel-lij</h2>
     <h3 class="description">( ゜- ゜)つロ 干杯</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>20</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>22</strong><br>文章</div></a>
       <a href="/categories"><div><strong>24</strong><br>分类</div></a>
       <a href="/tags"><div><strong>9</strong><br>标签</div></a>
     </div>
@@ -747,7 +747,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy;2017 - 2018 daniel-lij<br>
+      &copy;2018 - 2019 daniel-lij<br>
       
     </div>
     
