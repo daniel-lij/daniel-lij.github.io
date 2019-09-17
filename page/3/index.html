@@ -41,8 +41,8 @@
     <h2 class="author">daniel-lij</h2>
     <h3 class="description">( ゜- ゜)つロ 干杯</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>29</strong><br>文章</div></a>
-      <a href="/categories"><div><strong>28</strong><br>分类</div></a>
+      <a href="/archives"><div><strong>31</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>29</strong><br>分类</div></a>
       <a href="/tags"><div><strong>10</strong><br>标签</div></a>
     </div>
     <ul class="blog-link">
@@ -68,6 +68,126 @@
 </div>
 
         <section id="main">
+  
+    <article id="post-策略模式-动画" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/30/策略模式-动画/" class="article-date">
+  <time class="post-time" datetime="2018-03-30T07:25:22.000Z" itemprop="datePublished">
+    <span class="post-month">3月</span><br/>
+    <span class="post-day">30</span>
+  </time>
+</a>
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/30/策略模式-动画/">策略模式-动画</a>
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JavaScript设计模式/">JavaScript设计模式</a>,<a class="article-category-link" href="/categories/JavaScript设计模式/策略模式动画/">策略模式动画</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+        
+          <h3 id="策略模式动画"><a href="#策略模式动画" class="headerlink" title="策略模式动画"></a>策略模式动画</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"en"</span>&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">    &lt;meta name=<span class="string">"viewport"</span> content=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span><br><span class="line">    &lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"ie=edge"</span>&gt;</span><br><span class="line">    &lt;title&gt;策略模式-动画&lt;<span class="regexp">/title&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div style=<span class="string">"position: absolute; background:blue"</span> id=<span class="string">"div"</span>&gt; 我是div&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    &lt;script&gt;</span></span><br><span class="line"><span class="regexp">        var tween = &#123;</span></span><br><span class="line"><span class="regexp">            linear: function( t, b, c, d )&#123;</span></span><br><span class="line"><span class="regexp">                return c*t/</span>d + b</span><br><span class="line">            &#125;,</span><br><span class="line">            easeIn: <span class="function"><span class="keyword">function</span>(<span class="params"> t, b, c, d </span>)</span>&#123;</span><br><span class="line">                <span class="keyword">return</span> c*(t/=d)*t + b</span><br><span class="line">            &#125;,</span><br><span class="line">            strongEaseIn: <span class="function"><span class="keyword">function</span>(<span class="params"> t, b, c, d </span>)</span>&#123;</span><br><span class="line">                <span class="keyword">return</span> c*(t/=d)*t*t*t*t + b</span><br><span class="line">            &#125;,</span><br><span class="line">            strongEaseOut: <span class="function"><span class="keyword">function</span>(<span class="params"> t, b, c, d</span>)</span>&#123;</span><br><span class="line">                <span class="keyword">return</span> c*( ( t = t/d <span class="number">-1</span> )*t*t*t*t + <span class="number">1</span>) + b</span><br><span class="line">            &#125;,</span><br><span class="line">            sineaseIn: <span class="function"><span class="keyword">function</span>(<span class="params"> t, b, c, d </span>)</span>&#123;</span><br><span class="line">                <span class="keyword">return</span> c * (t/=d)*t*t +b</span><br><span class="line">            &#125;,</span><br><span class="line">            sineaseOut: <span class="function"><span class="keyword">function</span>(<span class="params"> t, b, c, d </span>)</span>&#123;</span><br><span class="line">                <span class="keyword">return</span>  c * (( t= t/d - <span class="number">1</span> ) * t * t + <span class="number">1</span>) + b</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> Animate = <span class="function"><span class="keyword">function</span>(<span class="params">dom</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.dom = dom</span><br><span class="line">            <span class="keyword">this</span>.startTime = <span class="number">0</span></span><br><span class="line">            <span class="keyword">this</span>.startPos = <span class="number">0</span></span><br><span class="line">            <span class="keyword">this</span>.endPos = <span class="number">0</span> </span><br><span class="line">            <span class="keyword">this</span>.propertyName = <span class="literal">null</span></span><br><span class="line">            <span class="keyword">this</span>.easing = <span class="literal">null</span></span><br><span class="line">            <span class="keyword">this</span>.duration = <span class="literal">null</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Animate.prototype.start = <span class="function"><span class="keyword">function</span>(<span class="params"> propertyName, endPos, duration, easing</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.startTime = +<span class="keyword">new</span> <span class="built_in">Date</span></span><br><span class="line">            <span class="keyword">this</span>.startPos = <span class="keyword">this</span>.dom.getBoundingClientRect()[propertyName]</span><br><span class="line">            <span class="keyword">this</span>.propertyName = propertyName</span><br><span class="line">            <span class="keyword">this</span>.endPos = endPos</span><br><span class="line">            <span class="keyword">this</span>.duration = duration</span><br><span class="line">            <span class="keyword">this</span>.easing = tween[ easing ]</span><br><span class="line"></span><br><span class="line">            <span class="keyword">var</span> self = <span class="keyword">this</span></span><br><span class="line">            <span class="keyword">var</span> timeId = setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                <span class="keyword">if</span>(self.step() === <span class="literal">false</span>)&#123;</span><br><span class="line">                    clearInterval( timeId )</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;, <span class="number">19</span>)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Animate.prototype.step = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">var</span> t = +<span class="keyword">new</span> <span class="built_in">Date</span>;</span><br><span class="line">            <span class="keyword">if</span>( t &gt;= <span class="keyword">this</span>.startTime + <span class="keyword">this</span>.duration )&#123;</span><br><span class="line">                <span class="keyword">this</span>.update( <span class="keyword">this</span>.endPos )</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">var</span> pos = <span class="keyword">this</span>.easing( t - <span class="keyword">this</span>.startTime, <span class="keyword">this</span>.startPos, <span class="keyword">this</span>.endPos, <span class="keyword">this</span>.startPos, <span class="keyword">this</span>.duration)</span><br><span class="line">            <span class="keyword">this</span>.update(pos)</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Animate.prototype.update = <span class="function"><span class="keyword">function</span>(<span class="params"> pos </span>)</span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.dom.style[ <span class="keyword">this</span>.propertyName ] = pos + <span class="string">'px'</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> div = <span class="built_in">document</span>.getElementById(<span class="string">'div'</span>)</span><br><span class="line">        <span class="keyword">var</span> animate = <span class="keyword">new</span> Animate(div)</span><br><span class="line">        animate.start( <span class="string">'left'</span>, <span class="number">500</span>, <span class="number">1000</span>, <span class="string">'easeIn'</span>)</span><br><span class="line">    &lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>body&gt;</span><br><span class="line">&lt;<span class="regexp">/html&gt;</span></span><br></pre></td></tr></table></figure>
+          
+            <p class="article-more-link">
+              <a href="/2018/03/30/策略模式-动画/#more">Read More</a>
+            </p>
+          
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/03/30/策略模式-动画/" data-id="ck0n5v5uy001fl0w0ge18pwqh" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-策略模式-为文本框添加多种验证" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/30/策略模式-为文本框添加多种验证/" class="article-date">
+  <time class="post-time" datetime="2018-03-30T07:23:43.000Z" itemprop="datePublished">
+    <span class="post-month">3月</span><br/>
+    <span class="post-day">30</span>
+  </time>
+</a>
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/30/策略模式-为文本框添加多种验证/">策略模式-为文本框添加多种验证</a>
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JavaScript设计模式/">JavaScript设计模式</a>,<a class="article-category-link" href="/categories/JavaScript设计模式/策略模式为文本框添加多种验证/">策略模式为文本框添加多种验证</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+        
+          <h3 id="策略模式为文本框添加多种验证"><a href="#策略模式为文本框添加多种验证" class="headerlink" title="策略模式为文本框添加多种验证"></a>策略模式为文本框添加多种验证</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"en"</span>&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">    &lt;meta name=<span class="string">"viewport"</span> content=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span><br><span class="line">    &lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"ie=edge"</span>&gt;</span><br><span class="line">    &lt;title&gt;复杂表单验证&lt;<span class="regexp">/title&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;form action=<span class="string">""</span> id=<span class="string">"registerForm"</span> mothod=<span class="string">"post"</span>&gt;</span><br><span class="line">        请输入用户名: &lt;input type="text" name="userName"/&gt;</span><br><span class="line">        请输入密码: &lt;input type="text" name="password"/&gt;</span><br><span class="line">        请输入手机号码: &lt;input type="text" name="phoneNumber"/&gt;</span><br><span class="line">        &lt;button&gt;提交&lt;/button&gt;</span><br><span class="line">    &lt;/form&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        var strategies = &#123;</span><br><span class="line">            isNonEmpty: function(value, errorMsg)&#123;</span><br><span class="line">                if(value === '')&#123;</span><br><span class="line">                    return errorMsg</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            minLength: function(value, length, errorMsg)&#123;</span><br><span class="line">                if(value.length &lt; length)&#123;</span><br><span class="line">                    return errorMsg</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            isMobile: function(value , errorMsg)&#123;</span><br><span class="line">                if(!/(1^[3][5][8][0-9]&#123;9&#125;$)/.test(value))&#123;</span><br><span class="line">                    return errorMsg</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        var Varlidator = function()&#123;</span><br><span class="line">            this.cache = [] </span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Varlidator.prototype.add = function(dom, rules)&#123;</span><br><span class="line">            var self = this</span><br><span class="line">            for( var i = 0, rule; rule = rules[i++];)&#123;</span><br><span class="line">                (function(rule)&#123;</span><br><span class="line">                    var strategyAry = rule.strategy.split( ':' )</span><br><span class="line">                    var errorMsg = rule.errorMsg</span><br><span class="line">                    self.cache.push(function()&#123;</span><br><span class="line">                        var strategy = strategyAry.shift()</span><br><span class="line">                        strategyAry.unshift( dom.value )</span><br><span class="line">                        strategyAry.push( errorMsg )</span><br><span class="line">                        return strategies[ strategy ].apply( dom, strategyAry )</span><br><span class="line">                    &#125;)</span><br><span class="line">                &#125;)(rule)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Varlidator.prototype.start = function()&#123;</span><br><span class="line">            for( var i=0, validataFunc; validataFunc = this.cache[ i++ ];)&#123;</span><br><span class="line">                var errorMsg = validataFunc()</span><br><span class="line">                if( errorMsg )&#123;</span><br><span class="line">                    alert(errorMsg)</span><br><span class="line">                    return errorMsg</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        /****************************** 客户端调用代码         ********************************/</span><br><span class="line"></span><br><span class="line">        var registerForm = document.getElementById('registerForm')</span><br><span class="line"></span><br><span class="line">        var validataFunc = function()&#123;</span><br><span class="line">            var varlidator = new Varlidator()</span><br><span class="line">            varlidator.add(registerForm.userName, [&#123;</span><br><span class="line">                strategy : 'isNonEmpty',</span><br><span class="line">                errorMsg : '用户名不能为空'</span><br><span class="line">            &#125;,&#123;</span><br><span class="line">                strategy : 'minLength:10',</span><br><span class="line">                errorMsg : '用户名长度不能少于10位'</span><br><span class="line">            &#125;])</span><br><span class="line">            varlidator.add(registerForm.password,[&#123;</span><br><span class="line">                strategy : 'minLength:6',</span><br><span class="line">                errorMsg : '密码长度不能少于6位'</span><br><span class="line">            &#125;])</span><br><span class="line">            varlidator.add(registerForm.phoneNumber, [&#123;</span><br><span class="line">                strategy : 'isMobile', </span><br><span class="line">                errorMsg : '手机号码格式不正确'</span><br><span class="line">            &#125;])</span><br><span class="line">            var errorMsg = varlidator.start()</span><br><span class="line">            return errorMsg</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        registerForm.onsubmit = function()&#123;</span><br><span class="line">            var errorMsg = validataFunc()</span><br><span class="line">            if(errorMsg)&#123;</span><br><span class="line">                alert(errorMsg)</span><br><span class="line">                return false</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+          
+            <p class="article-more-link">
+              <a href="/2018/03/30/策略模式-为文本框添加多种验证/#more">Read More</a>
+            </p>
+          
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/03/30/策略模式-为文本框添加多种验证/" data-id="ck0n5v5uz001jl0w0k4s954b3" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
   
     <article id="post-设计模式-策略模式表单应用" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -106,7 +226,7 @@
       
         
         
-          <h3 id="策略模式表单应用"><a href="#策略模式表单应用" class="headerlink" title="策略模式表单应用"></a>策略模式表单应用</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"en"</span>&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">    &lt;meta name=<span class="string">"viewport"</span> content=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span><br><span class="line">    &lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"ie=edge"</span>&gt;</span><br><span class="line">    &lt;title&gt;简单表单验证&lt;<span class="regexp">/title&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;form action=<span class="string">""</span> id=<span class="string">"registerForm"</span> mothod=<span class="string">"post"</span>&gt;</span><br><span class="line">        请输入用户名: <span class="xml"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"userName"</span>/&gt;</span></span></span><br><span class="line">        请输入密码: &lt;input type="text" name="password"/&gt;</span><br><span class="line">        请输入手机号码: &lt;input type="text" name="phoneNumber"/&gt;</span><br><span class="line">        &lt;button&gt;提交&lt;/button&gt;</span><br><span class="line">    &lt;/form&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        var strategies = &#123;</span><br><span class="line">            isNonEmpty: function(value, errorMsg)&#123;</span><br><span class="line">                if(value === '')&#123;</span><br><span class="line">                    return errorMsg</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            minLength: function(value, length, errorMsg)&#123;</span><br><span class="line">                if(value.length &lt; length)&#123;</span><br><span class="line">                    return errorMsg</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            isMobile: function(value , errorMsg)&#123;</span><br><span class="line">                if(!/(1^[3][5][8][0-9]&#123;9&#125;$)/.test(value))&#123;</span><br><span class="line">                    return errorMsg</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        var validataFunc = function()&#123;</span><br><span class="line">            var varlidator = new Varlidator()</span><br><span class="line">            varlidator.add(registerForm.userName, 'isNonEmpty', '用户名不能为空')</span><br><span class="line">            varlidator.add( registerForm.userName, 'minLength:10', '用户名不能小于10位')</span><br><span class="line">            varlidator.add(registerForm.password, 'minLength:6', '密码长度不能少于6位')</span><br><span class="line">            varlidator.add(registerForm.phoneNumber, 'isMobile', '手机号码格式不正确')</span><br><span class="line">            var errorMsg = varlidator.start()</span><br><span class="line">            return errorMsg</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        var registerForm = document.getElementById('registerForm')</span><br><span class="line">        registerForm.onsubmit = function()&#123;</span><br><span class="line">            var errorMsg = validataFunc()</span><br><span class="line">            if(errorMsg)&#123;</span><br><span class="line">                alert(errorMsg)</span><br><span class="line">                return false</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        var Varlidator = function()&#123;</span><br><span class="line">            this.cache = [] </span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Varlidator.prototype.add = function(dom, rule, errorMsg)&#123;</span><br><span class="line">            var ary = rule.split(':')</span><br><span class="line">            this.cache.push(function()&#123;</span><br><span class="line">                var strategy = ary.shift()</span><br><span class="line">                ary.unshift(dom.value)</span><br><span class="line">                ary.push(errorMsg)</span><br><span class="line">                return strategies[ strategy ].apply( dom,ary )</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Varlidator.prototype.start = function()&#123;</span><br><span class="line">            for( var i=0, validataFunc; validataFunc = this.cache[ i++ ];)&#123;</span><br><span class="line">                var msg = validataFunc()</span><br><span class="line">                if( msg )&#123;</span><br><span class="line">                    return msg</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;   </span><br><span class="line">    &lt;/script&gt;</span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+          <h3 id="策略模式表单应用"><a href="#策略模式表单应用" class="headerlink" title="策略模式表单应用"></a>策略模式表单应用</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"en"</span>&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">    &lt;meta name=<span class="string">"viewport"</span> content=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span><br><span class="line">    &lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"ie=edge"</span>&gt;</span><br><span class="line">    &lt;title&gt;简单表单验证&lt;<span class="regexp">/title&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;form action=<span class="string">""</span> id=<span class="string">"registerForm"</span> mothod=<span class="string">"post"</span>&gt;</span><br><span class="line">        请输入用户名: &lt;input type="text" name="userName"/&gt;</span><br><span class="line">        请输入密码: &lt;input type="text" name="password"/&gt;</span><br><span class="line">        请输入手机号码: &lt;input type="text" name="phoneNumber"/&gt;</span><br><span class="line">        &lt;button&gt;提交&lt;/button&gt;</span><br><span class="line">    &lt;/form&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        var strategies = &#123;</span><br><span class="line">            isNonEmpty: function(value, errorMsg)&#123;</span><br><span class="line">                if(value === '')&#123;</span><br><span class="line">                    return errorMsg</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            minLength: function(value, length, errorMsg)&#123;</span><br><span class="line">                if(value.length &lt; length)&#123;</span><br><span class="line">                    return errorMsg</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            isMobile: function(value , errorMsg)&#123;</span><br><span class="line">                if(!/(1^[3][5][8][0-9]&#123;9&#125;$)/.test(value))&#123;</span><br><span class="line">                    return errorMsg</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        var validataFunc = function()&#123;</span><br><span class="line">            var varlidator = new Varlidator()</span><br><span class="line">            varlidator.add(registerForm.userName, 'isNonEmpty', '用户名不能为空')</span><br><span class="line">            varlidator.add( registerForm.userName, 'minLength:10', '用户名不能小于10位')</span><br><span class="line">            varlidator.add(registerForm.password, 'minLength:6', '密码长度不能少于6位')</span><br><span class="line">            varlidator.add(registerForm.phoneNumber, 'isMobile', '手机号码格式不正确')</span><br><span class="line">            var errorMsg = varlidator.start()</span><br><span class="line">            return errorMsg</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        var registerForm = document.getElementById('registerForm')</span><br><span class="line">        registerForm.onsubmit = function()&#123;</span><br><span class="line">            var errorMsg = validataFunc()</span><br><span class="line">            if(errorMsg)&#123;</span><br><span class="line">                alert(errorMsg)</span><br><span class="line">                return false</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        var Varlidator = function()&#123;</span><br><span class="line">            this.cache = [] </span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Varlidator.prototype.add = function(dom, rule, errorMsg)&#123;</span><br><span class="line">            var ary = rule.split(':')</span><br><span class="line">            this.cache.push(function()&#123;</span><br><span class="line">                var strategy = ary.shift()</span><br><span class="line">                ary.unshift(dom.value)</span><br><span class="line">                ary.push(errorMsg)</span><br><span class="line">                return strategies[ strategy ].apply( dom,ary )</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Varlidator.prototype.start = function()&#123;</span><br><span class="line">            for( var i=0, validataFunc; validataFunc = this.cache[ i++ ];)&#123;</span><br><span class="line">                var msg = validataFunc()</span><br><span class="line">                if( msg )&#123;</span><br><span class="line">                    return msg</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;   </span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
           
             <p class="article-more-link">
               <a href="/2018/03/30/设计模式-策略模式表单应用/#more">Read More</a>
@@ -116,7 +236,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/30/设计模式-策略模式表单应用/" data-id="cjvm5v3sr004r38w0wmbe9zm3" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2018/03/30/设计模式-策略模式表单应用/" data-id="ck0n5v5vf0029l0w0jmn5yrx3" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -176,7 +296,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/30/设计模式-策略模式/" data-id="cjvm5v3pl001w38w0qwf41jca" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2018/03/30/设计模式-策略模式/" data-id="ck0n5v5v8001zl0w0ok6xzgly" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -236,7 +356,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/30/设计模式-单例模式的简单应用/" data-id="cjvm5v3po001z38w0q00seikv" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2018/03/30/设计模式-单例模式的简单应用/" data-id="ck0n5v5vh002cl0w0qrosc94g" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -296,7 +416,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/30/设计模式-单例模式/" data-id="cjvm5v3pj001s38w0im85l2lw" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2018/03/30/设计模式-单例模式/" data-id="ck0n5v5v7001xl0w0ific9dj1" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -356,7 +476,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/29/JavaScript中的所有事件/" data-id="cjvm5v3ns000538w02vlpwdv1" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2018/03/29/JavaScript中的所有事件/" data-id="ck0n5v5tg0000l0w0x86os6cy" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -416,7 +536,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/29/初次使用MarkDown/" data-id="cjvm5v3ok000q38w0r208c8bo" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2018/03/29/初次使用MarkDown/" data-id="ck0n5v5up000wl0w0lm9fgovn" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/测试/">测试</a></li></ul>
@@ -476,7 +596,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/24/Hello World/" data-id="cjvm5v3np000438w0mm6k9awy" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2018/03/24/Hello World/" data-id="ck0n5v5u6000el0w0izfc1cca" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/测试/">测试</a></li></ul>
@@ -536,7 +656,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/24/你好 世界/" data-id="cjvm5v3od000l38w09y9e6xl7" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2018/03/24/你好 世界/" data-id="ck0n5v5uk000pl0w0nze2poy1" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/测试/">测试</a></li></ul>
@@ -549,70 +669,10 @@
 
 
   
-    <article id="post-独立游戏制作人-陈星汉" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/03/22/独立游戏制作人-陈星汉/" class="article-date">
-  <time class="post-time" datetime="2018-03-22T05:41:56.000Z" itemprop="datePublished">
-    <span class="post-month">3月</span><br/>
-    <span class="post-day">22</span>
-  </time>
-</a>
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/22/独立游戏制作人-陈星汉/">独立游戏制作人 陈星汉</a>
-    </h1>
-  
-
-        <div>
-          
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/测试/">测试</a>,<a class="article-category-link" href="/categories/测试/独立游戏/">独立游戏</a>
-  </div>
-
-          
-              
-
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-        
-          <h4><b>陈星汉，这位被《华尔街日报》、《连线杂志》和《三联生活周刊》等媒体誉为“禅师”、“吟游诗人”、“逍遥骑士”的天才游戏制作人，以“事与愿违”四个字总结自己从小学到大学的十六年。中国式的应试教育，给他的童年生活留下了无法磨灭的痕迹<b></b></b></h4>
-          
-            <p class="article-more-link">
-              <a href="/2018/03/22/独立游戏制作人-陈星汉/#more">Read More</a>
-            </p>
-          
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/22/独立游戏制作人-陈星汉/" data-id="cjvm5v3p1001838w0lut2sv6t" class="article-share-link">分享</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/独立游戏/">独立游戏</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/page/2/">&laquo; pre</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    <a class="extend prev" rel="prev" href="/page/2/">&laquo; pre</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">next &raquo;</a>
   </nav>
 </section>
         
@@ -653,8 +713,8 @@
     <h2 class="author">daniel-lij</h2>
     <h3 class="description">( ゜- ゜)つロ 干杯</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>29</strong><br>文章</div></a>
-      <a href="/categories"><div><strong>28</strong><br>分类</div></a>
+      <a href="/archives"><div><strong>31</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>29</strong><br>分类</div></a>
       <a href="/tags"><div><strong>10</strong><br>标签</div></a>
     </div>
 
