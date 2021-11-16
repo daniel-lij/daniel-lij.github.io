@@ -3,18 +3,20 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>Illusory</title>
+  <title>P4 中文件上传下载 | Illusory</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="( ゜- ゜)つロ 干杯">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Illusory">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="echarts5.21之后的echarts组件组件自适应,自动读取父元素高度,简单不到3kb1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818">
+<meta name="keywords" content="工作记录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="P4 中文件上传下载">
+<meta property="og:url" content="http://yoursite.com/2021/10/21/echarts组件/index.html">
 <meta property="og:site_name" content="Illusory">
-<meta property="og:description" content="( ゜- ゜)つロ 干杯">
+<meta property="og:description" content="echarts5.21之后的echarts组件组件自适应,自动读取父元素高度,简单不到3kb1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2021-11-16T12:10:03.548Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Illusory">
-<meta name="twitter:description" content="( ゜- ゜)つロ 干杯">
+<meta name="twitter:title" content="P4 中文件上传下载">
+<meta name="twitter:description" content="echarts5.21之后的echarts组件组件自适应,自动读取父元素高度,简单不到3kb1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818">
   
     <link rel="alternate" href="/atom.xml" title="Illusory" type="application/atom+xml">
   
@@ -67,69 +69,7 @@
   </div>
 </div>
 
-        <section id="main">
-  
-    <article id="post-监测dom的变化" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2021/11/15/监测dom的变化/" class="article-date">
-  <time class="post-time" datetime="2021-11-15T02:11:16.000Z" itemprop="datePublished">
-    <span class="post-month">11月</span><br/>
-    <span class="post-day">15</span>
-  </time>
-</a>
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/11/15/监测dom的变化/">P4 监测DOM的属性变化</a>
-    </h1>
-  
-
-        <div>
-          
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/工作记录/">工作记录</a>
-  </div>
-
-          
-              
-
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-        
-          <h1 id="监测DOM的属性变化"><a href="#监测DOM的属性变化" class="headerlink" title="监测DOM的属性变化"></a>监测DOM的属性变化</h1><h3 id="有一些情况比如说dom属性如宽度，高度发生变化之后进行一些逻辑操作，就可以observer之后执行。自动监测dom的属性变化"><a href="#有一些情况比如说dom属性如宽度，高度发生变化之后进行一些逻辑操作，就可以observer之后执行。自动监测dom的属性变化" class="headerlink" title="有一些情况比如说dom属性如宽度，高度发生变化之后进行一些逻辑操作，就可以observer之后执行。自动监测dom的属性变化"></a>有一些情况比如说dom属性如宽度，高度发生变化之后进行一些逻辑操作，就可以observer之后执行。自动监测dom的属性变化</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">observerEchartDom(dom) &#123;</span><br><span class="line">  <span class="keyword">const</span> MutationObserver =</span><br><span class="line">    <span class="built_in">window</span>.MutationObserver ||</span><br><span class="line">    <span class="built_in">window</span>.WebKitMutationObserver ||</span><br><span class="line">    <span class="built_in">window</span>.MozMutationObserver</span><br><span class="line">  <span class="keyword">this</span>.observer = <span class="keyword">new</span> MutationObserver(<span class="function">(<span class="params">mutation</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'asdf'</span>, mutation)</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="keyword">this</span>.observer.observe(dom, &#123;</span><br><span class="line">    attributes: <span class="literal">true</span>,</span><br><span class="line">    attributeFilter: [<span class="string">'style'</span>],</span><br><span class="line">    attributeOldValue: <span class="literal">true</span>,</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-          
-            <p class="article-more-link">
-              <a href="/2021/11/15/监测dom的变化/#more">Read More</a>
-            </p>
-          
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2021/11/15/监测dom的变化/" data-id="ckw227ukb000a38w0u3x8hs7f" class="article-share-link">分享</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工作记录/">工作记录</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-echarts组件" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-echarts组件" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2021/10/21/echarts组件/" class="article-date">
   <time class="post-time" datetime="2021-10-21T02:11:16.000Z" itemprop="datePublished">
@@ -144,8 +84,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/10/21/echarts组件/">P4 中文件上传下载</a>
+    <h1 class="article-title" itemprop="name">
+      P4 中文件上传下载
     </h1>
   
 
@@ -167,11 +107,7 @@
         
         
           <h1 id="echarts5-21之后的echarts组件"><a href="#echarts5-21之后的echarts组件" class="headerlink" title="echarts5.21之后的echarts组件"></a>echarts5.21之后的echarts组件</h1><h3 id="组件自适应-自动读取父元素高度-简单不到3kb"><a href="#组件自适应-自动读取父元素高度-简单不到3kb" class="headerlink" title="组件自适应,自动读取父元素高度,简单不到3kb"></a>组件自适应,自动读取父元素高度,简单不到3kb</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">import</span> &#123; use &#125; <span class="keyword">from</span> <span class="string">'echarts/core'</span></span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> echarts <span class="keyword">from</span> <span class="string">'echarts/core'</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'echarts-liquidfill'</span></span><br><span class="line"><span class="keyword">import</span> $ <span class="keyword">from</span> <span class="string">'jquery'</span></span><br><span class="line"><span class="keyword">import</span> &#123;</span><br><span class="line">  BarChart,</span><br><span class="line">  LineChart,</span><br><span class="line">  PieChart,</span><br><span class="line">  MapChart,</span><br><span class="line">  RadarChart,</span><br><span class="line">  ScatterChart,</span><br><span class="line">  EffectScatterChart,</span><br><span class="line">  LinesChart,</span><br><span class="line">&#125; <span class="keyword">from</span> <span class="string">'echarts/charts'</span></span><br><span class="line"><span class="keyword">import</span> &#123;</span><br><span class="line">  GridComponent,</span><br><span class="line">  PolarComponent,</span><br><span class="line">  GeoComponent,</span><br><span class="line">  TooltipComponent,</span><br><span class="line">  LegendComponent,</span><br><span class="line">  TitleComponent,</span><br><span class="line">  VisualMapComponent,</span><br><span class="line">  DatasetComponent,</span><br><span class="line">  ToolboxComponent,</span><br><span class="line">  DataZoomComponent,</span><br><span class="line">&#125; <span class="keyword">from</span> <span class="string">'echarts/components'</span></span><br><span class="line"><span class="keyword">import</span> &#123; CanvasRenderer, SVGRenderer &#125; <span class="keyword">from</span> <span class="string">'echarts/renderers'</span></span><br><span class="line"><span class="keyword">import</span> &#123; throttle &#125; <span class="keyword">from</span> <span class="string">'lodash'</span></span><br><span class="line">use([</span><br><span class="line">  BarChart,</span><br><span class="line">  LineChart,</span><br><span class="line">  PieChart,</span><br><span class="line">  MapChart,</span><br><span class="line">  RadarChart,</span><br><span class="line">  ScatterChart,</span><br><span class="line">  EffectScatterChart,</span><br><span class="line">  LinesChart,</span><br><span class="line">  GridComponent,</span><br><span class="line">  PolarComponent,</span><br><span class="line">  GeoComponent,</span><br><span class="line">  TooltipComponent,</span><br><span class="line">  LegendComponent,</span><br><span class="line">  TitleComponent,</span><br><span class="line">  VisualMapComponent,</span><br><span class="line">  DatasetComponent,</span><br><span class="line">  CanvasRenderer,</span><br><span class="line">  SVGRenderer,</span><br><span class="line">  ToolboxComponent,</span><br><span class="line">  DataZoomComponent,</span><br><span class="line">])</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  props: &#123;</span><br><span class="line">    option: &#123;</span><br><span class="line">      type: <span class="built_in">Object</span>,</span><br><span class="line">      <span class="keyword">default</span>: <span class="function"><span class="params">()</span> =&gt;</span> &#123;&#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">    theme: &#123;</span><br><span class="line">      type: <span class="built_in">Object</span>,</span><br><span class="line">      <span class="keyword">default</span>: <span class="literal">null</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  data() &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      chart: <span class="literal">null</span>,</span><br><span class="line">      widthAndHeight: &#123;&#125;,</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  watch: &#123;</span><br><span class="line">    option: &#123;</span><br><span class="line">      handler(newValue, oldValue) &#123;</span><br><span class="line">        <span class="keyword">var</span> self = <span class="keyword">this</span></span><br><span class="line">        self.$nextTick(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">          self.setOption(newValue)</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;,</span><br><span class="line">      deep: <span class="literal">true</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  mounted() &#123;</span><br><span class="line">    <span class="keyword">var</span> self = <span class="keyword">this</span></span><br><span class="line">    self.$nextTick(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log($(self.$refs.chartYT).width())</span><br><span class="line">      self.getHiddenStyle(self.$refs.chartYT)</span><br><span class="line">      self.chart = echarts.init(self.$refs.chartYT, <span class="keyword">this</span>.theme, &#123;</span><br><span class="line">        width: <span class="string">`<span class="subst">$&#123;self.widthAndHeight.width&#125;</span>px`</span>,</span><br><span class="line">        height: <span class="string">`<span class="subst">$&#123;self.widthAndHeight.height&#125;</span>px`</span>,</span><br><span class="line">      &#125;)</span><br><span class="line">      <span class="keyword">if</span> (self.option) &#123;</span><br><span class="line">        self.setOption(self.option)</span><br><span class="line">      &#125;</span><br><span class="line">      self.chart._resize = throttle(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        self.chart.resize(&#123;</span><br><span class="line">          width: <span class="string">`<span class="subst">$&#123;self.$refs.chartYT.clientWidth&#125;</span>px`</span>,</span><br><span class="line">          height: <span class="string">`<span class="subst">$&#123;self.$refs.chartYT.clientHeight&#125;</span>px`</span>,</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;, <span class="number">200</span>)</span><br><span class="line">      <span class="built_in">window</span>.addEventListener(<span class="string">'resize'</span>, self.chart._resize)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  beforeDestroy() &#123;</span><br><span class="line">    <span class="built_in">window</span>.removeEventListener(<span class="string">'resize'</span>, <span class="keyword">this</span>.chart._resize)</span><br><span class="line">    clearTimeout(<span class="keyword">this</span>.timeout)</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  methods: &#123;</span><br><span class="line">    setOption(option) &#123;</span><br><span class="line">      <span class="keyword">this</span>.chart &amp;&amp; <span class="keyword">this</span>.chart.setOption(option)</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    getHiddenStyle(elem) &#123;</span><br><span class="line">      <span class="keyword">var</span> properties, previous</span><br><span class="line">      <span class="comment">// elem元素可获取尺寸样式的属性</span></span><br><span class="line">      properties = &#123;</span><br><span class="line">        position: <span class="string">'absolute'</span>,</span><br><span class="line">        visibility: <span class="string">'hidden'</span>,</span><br><span class="line">        display: <span class="string">'block'</span>,</span><br><span class="line">      &#125;</span><br><span class="line">      previous = &#123;&#125;</span><br><span class="line">      <span class="comment">// 对elme设置可获取宽高的样式</span></span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> properties) &#123;</span><br><span class="line">        previous[key] = elem.style[key]</span><br><span class="line">        elem.style[key] = properties[key]</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">// 获取宽高</span></span><br><span class="line">      <span class="keyword">if</span> (elem.offsetHeight &gt; <span class="number">0</span> || elem.offsetWidth &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">this</span>.widthAndHeight = &#123;</span><br><span class="line">          width: <span class="keyword">this</span>.$refs.chartYT.offsetWidth,</span><br><span class="line">          height: <span class="keyword">this</span>.$refs.chartYT.offsetHeight,</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 恢复原来的样式</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> akey <span class="keyword">in</span> properties) &#123;</span><br><span class="line">          elem.style[akey] = previous[akey]</span><br><span class="line">        &#125;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> bkey <span class="keyword">in</span> properties) &#123;</span><br><span class="line">          elem.style[bkey] = previous[bkey]</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">this</span>.getHiddenStyle(elem.parentNode)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;template&gt;</span></span><br><span class="line"><span class="regexp">  &lt;div ref="chartYT" :class="$style.chart" /</span>&gt;</span><br><span class="line">&lt;<span class="regexp">/template&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;style lang="scss" module&gt;</span></span><br><span class="line"><span class="regexp">@import '@design';</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">.chart &#123;</span></span><br><span class="line"><span class="regexp">  position: relative;</span></span><br><span class="line"><span class="regexp">  width: 100%;</span></span><br><span class="line"><span class="regexp">  height: 100%;</span></span><br><span class="line"><span class="regexp">  overflow: hidden;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">&lt;/</span>style&gt;</span><br></pre></td></tr></table></figure>
-          
-            <p class="article-more-link">
-              <a href="/2021/10/21/echarts组件/#more">Read More</a>
-            </p>
-          
+
         
       
     </div>
@@ -184,130 +120,49 @@
     </footer>
   </div>
   
-</article>
-
-
-
-  
-    <article id="post-文件上传" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/11/21/文件上传/" class="article-date">
-  <time class="post-time" datetime="2020-11-21T02:11:16.000Z" itemprop="datePublished">
-    <span class="post-month">11月</span><br/>
-    <span class="post-day">21</span>
-  </time>
-</a>
-  </div>
-  <div class="article-inner">
     
-    
-      <header class="article-header">
-        
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/21/文件上传/">P4 中文件上传下载</a>
-    </h1>
+    <a href="/2021/11/15/监测dom的变化/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          P4 监测DOM的属性变化
+        
+      </div>
+    </a>
   
+  
+    <a href="/2020/11/21/文件上传/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">P4 中文件上传下载</div>
+    </a>
+  
+</nav>
 
-        <div>
-          
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/工作记录/">工作记录</a>
-  </div>
-
-          
-              
-
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-        
-          <h1 id="P4-中文件上传下载"><a href="#P4-中文件上传下载" class="headerlink" title="P4 中文件上传下载"></a>P4 中文件上传下载</h1><h3 id="思路-form-表单中可能有多个附件属性名-在提交表单的时候将上传文件的路径写入对应的-from-字段中容易混淆。我们可以在上传的时候用文件上传的-change-事件传入表单的属性名，待上传文件返回值后直接写入表单中"><a href="#思路-form-表单中可能有多个附件属性名-在提交表单的时候将上传文件的路径写入对应的-from-字段中容易混淆。我们可以在上传的时候用文件上传的-change-事件传入表单的属性名，待上传文件返回值后直接写入表单中" class="headerlink" title="思路:form 表单中可能有多个附件属性名,在提交表单的时候将上传文件的路径写入对应的 from 字段中容易混淆。我们可以在上传的时候用文件上传的@change 事件传入表单的属性名，待上传文件返回值后直接写入表单中"></a>思路:form 表单中可能有多个附件属性名,在提交表单的时候将上传文件的路径写入对应的 from 字段中容易混淆。我们可以在上传的时候用文件上传的@change 事件传入表单的属性名，待上传文件返回值后直接写入表单中</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 案件:调用case的upload接口</span></span><br><span class="line"><span class="comment">// 其他地方: 调用archive的upload接口</span></span><br><span class="line"><span class="keyword">import</span> CaseApi <span class="keyword">from</span> <span class="string">'@api/case.js'</span></span><br><span class="line"><span class="comment">// import ArchiveApi from '@api/archive.js'</span></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  data()&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      pictures: []</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  methods:&#123;</span><br><span class="line">    <span class="keyword">async</span> changeFile(field)&#123;</span><br><span class="line">      <span class="keyword">let</span> res = []</span><br><span class="line">      <span class="keyword">if</span> (<span class="keyword">this</span>.pictures.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        res = <span class="keyword">await</span> <span class="keyword">this</span>.submitPictures()</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (res.length &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">          <span class="keyword">return</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">this</span>.buildTable[<span class="keyword">this</span>.element.formType].attributes[field.name] = res.join(<span class="string">';'</span>)</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 上传文件</span></span><br><span class="line">    <span class="keyword">async</span> submitPictures() &#123;</span><br><span class="line">      <span class="keyword">let</span> success = <span class="literal">true</span></span><br><span class="line">      <span class="keyword">let</span> results = []</span><br><span class="line"></span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">const</span> picture <span class="keyword">of</span> <span class="keyword">this</span>.pictures) &#123;</span><br><span class="line">        <span class="keyword">const</span> res = <span class="keyword">await</span> <span class="keyword">this</span>.submitPicture(picture)</span><br><span class="line">        success = success &amp;&amp; res.success</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (success) &#123;</span><br><span class="line">          results.push(res.fileUrl)</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          results = []</span><br><span class="line">          Snack.sendMessage(</span><br><span class="line">            <span class="string">`多媒体文件 <span class="subst">$&#123;picture.name&#125;</span> 上传失败，已停止执行后续操作：<span class="subst">$&#123;res.message&#125;</span>`</span>,</span><br><span class="line">            <span class="string">'warn'</span></span><br><span class="line">          )</span><br><span class="line">          <span class="keyword">break</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">return</span> results</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    <span class="keyword">async</span> submitPicture(picture) &#123;</span><br><span class="line">      <span class="keyword">const</span> res = <span class="keyword">await</span> CaseApi.uploadFile(picture)</span><br><span class="line">      <span class="keyword">return</span> res.data</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-          
-            <p class="article-more-link">
-              <a href="/2020/11/21/文件上传/#more">Read More</a>
-            </p>
-          
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/11/21/文件上传/" data-id="ckw227uka000938w07ogss3gy" class="article-share-link">分享</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工作记录/">工作记录</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
 
 
-
   
-    <article id="post-一些自己常用的网站" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/04/19/一些自己常用的网站/" class="article-date">
-  <time class="post-time" datetime="2018-04-19T02:11:16.000Z" itemprop="datePublished">
-    <span class="post-month">4月</span><br/>
-    <span class="post-day">19</span>
-  </time>
-</a>
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/19/一些自己常用的网站/">一些自己常用的网站</a>
-    </h1>
-  
+    <!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zNTE0Ny8xMTY4Mg==">
+<script type="text/javascript">
+    (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
 
-        <div>
-          
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/个人/">个人</a>,<a class="article-category-link" href="/categories/个人/网站集合/">网站集合</a>
-  </div>
+        if (typeof LivereTower === 'function') { return; }
 
-          
-              
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
 
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-        
-          <h2 id="一些自己常用的网站"><a href="#一些自己常用的网站" class="headerlink" title="一些自己常用的网站"></a>一些自己常用的网站</h2><h4 id="公司工作常用"><a href="#公司工作常用" class="headerlink" title="公司工作常用"></a>公司工作常用</h4><blockquote>
-          
-            <p class="article-more-link">
-              <a href="/2018/04/19/一些自己常用的网站/#more">Read More</a>
-            </p>
-          
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/19/一些自己常用的网站/" data-id="ckw227uk9000838w04bqhdqeg" class="article-share-link">分享</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/个人/">个人</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
+        e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+</script>
+<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
   
 
 </section>

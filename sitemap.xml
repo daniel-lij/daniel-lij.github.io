@@ -2,16 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/2020/11/21/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/</loc>
+    <loc>http://yoursite.com/2021/11/15/%E7%9B%91%E6%B5%8Bdom%E7%9A%84%E5%8F%98%E5%8C%96/</loc>
     
-    <lastmod>2020-11-22T08:13:46.186Z</lastmod>
+    <lastmod>2021-11-16T12:15:13.898Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2021/10/21/echarts%E7%BB%84%E4%BB%B6/</loc>
+    
+    <lastmod>2021-11-16T12:10:03.548Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://yoursite.com/2018/04/19/%E4%B8%80%E4%BA%9B%E8%87%AA%E5%B7%B1%E5%B8%B8%E7%94%A8%E7%9A%84%E7%BD%91%E7%AB%99/</loc>
     
-    <lastmod>2020-07-13T06:29:05.250Z</lastmod>
+    <lastmod>2020-12-16T07:10:26.717Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/11/21/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/</loc>
+    
+    <lastmod>2020-11-22T08:13:46.186Z</lastmod>
     
   </url>
   
