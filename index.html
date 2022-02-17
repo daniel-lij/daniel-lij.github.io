@@ -41,7 +41,7 @@
     <h2 class="author">daniel-lij</h2>
     <h3 class="description">( ゜- ゜)つロ 干杯</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>4</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>6</strong><br>文章</div></a>
       <a href="/categories"><div><strong>3</strong><br>分类</div></a>
       <a href="/tags"><div><strong>2</strong><br>标签</div></a>
     </div>
@@ -68,6 +68,126 @@
 </div>
 
         <section id="main">
+  
+    <article id="post-内部echart饼状图样式" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/02/17/内部echart饼状图样式/" class="article-date">
+  <time class="post-time" datetime="2022-02-17T02:11:16.000Z" itemprop="datePublished">
+    <span class="post-month">2月</span><br/>
+    <span class="post-day">17</span>
+  </time>
+</a>
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/02/17/内部echart饼状图样式/">内部echart饼状图样式</a>
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/工作记录/">工作记录</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+        
+          <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line">getEchart(data, name, total) &#123;</span><br><span class="line">  <span class="keyword">var</span> title = [</span><br><span class="line">    &#123;</span><br><span class="line">      text: name,</span><br><span class="line">      subtext: total + <span class="string">'根'</span>,</span><br><span class="line">      top: <span class="string">'54%'</span>,</span><br><span class="line">      left: <span class="string">'50%'</span>,</span><br><span class="line">      textAlign: <span class="string">'center'</span>,</span><br><span class="line">      itemGap: <span class="number">5</span>,</span><br><span class="line">      subtextStyle: &#123;</span><br><span class="line">        rich: &#123;</span><br><span class="line">          val: &#123;</span><br><span class="line">            fontSize: <span class="number">24</span>,</span><br><span class="line">            fontWeight: <span class="string">'bold'</span>,</span><br><span class="line">            color: <span class="string">'#E8BA43'</span>,</span><br><span class="line">          &#125;,</span><br><span class="line">        &#125;,</span><br><span class="line">      &#125;,</span><br><span class="line">      textStyle: &#123;</span><br><span class="line">        color: <span class="string">'#ccc'</span>,</span><br><span class="line">        fontSize: <span class="number">15</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">  ]</span><br><span class="line">  <span class="keyword">var</span> legend = &#123;</span><br><span class="line">    y: <span class="number">10</span>,</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> series = [</span><br><span class="line">    &#123;</span><br><span class="line">      type: <span class="string">'pie'</span>,</span><br><span class="line">      radius: [<span class="string">'30%'</span>, <span class="string">'55%'</span>],</span><br><span class="line">      center: [<span class="string">'50%'</span>, <span class="string">'60%'</span>],</span><br><span class="line">      hoverAnimation: <span class="literal">false</span>,</span><br><span class="line">      data: data,</span><br><span class="line">      label: &#123;</span><br><span class="line">        normal: &#123;</span><br><span class="line">          show: <span class="literal">true</span>,</span><br><span class="line">          formatter: <span class="string">'&#123;b|&#123;b&#125;&#125;\n&#123;hr|&#125;\n&#123;c|&#123;c&#125;根&#125;'</span>,</span><br><span class="line">          rich: &#123;</span><br><span class="line">            a: &#123;</span><br><span class="line">              fontSize: <span class="number">14</span>,</span><br><span class="line">              fontFamily: <span class="string">'PingFang SC'</span>,</span><br><span class="line">              fontWeight: <span class="number">400</span>,</span><br><span class="line">              color: <span class="string">'#fff'</span>,</span><br><span class="line">              textAlign: <span class="string">'center'</span>,</span><br><span class="line">            &#125;,</span><br><span class="line">            hr: &#123;</span><br><span class="line">              borderColor: <span class="string">'#4681ec'</span>,</span><br><span class="line">              width: <span class="string">'100%'</span>,</span><br><span class="line">              borderWidth: <span class="number">2</span>,</span><br><span class="line">              height: <span class="number">0</span>,</span><br><span class="line">            &#125;,</span><br><span class="line">            c: &#123;</span><br><span class="line">              fontSize: <span class="number">12</span>,</span><br><span class="line">              fontFamily: <span class="string">'Source Han Sans CN'</span>,</span><br><span class="line">              color: <span class="string">'#E7B943'</span>,</span><br><span class="line">              fontWeight: <span class="number">400</span>,</span><br><span class="line">              lineHeight: <span class="number">20</span>,</span><br><span class="line"></span><br><span class="line">              align: <span class="string">'center'</span>,</span><br><span class="line">            &#125;,</span><br><span class="line">          &#125;,</span><br><span class="line">        &#125;,</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">  ]</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> EchartDeploy.deploy(</span><br><span class="line">    title,</span><br><span class="line">    legend,</span><br><span class="line">    <span class="literal">false</span>,</span><br><span class="line">    <span class="literal">false</span>,</span><br><span class="line">    <span class="literal">false</span>,</span><br><span class="line">    <span class="literal">false</span>,</span><br><span class="line">    <span class="literal">false</span>,</span><br><span class="line">    [</span><br><span class="line">      <span class="string">'#1890FF'</span>,</span><br><span class="line">      <span class="string">'#2FC25B'</span>,</span><br><span class="line">      <span class="string">'#FACC14'</span>,</span><br><span class="line">      <span class="string">'#223273'</span>,</span><br><span class="line">      <span class="string">'#8643E0'</span>,</span><br><span class="line">      <span class="string">'#13C2C2'</span>,</span><br><span class="line">      <span class="string">'#3436C7'</span>,</span><br><span class="line">      <span class="string">'#F04864'</span>,</span><br><span class="line">    ],</span><br><span class="line">    series,</span><br><span class="line">    []</span><br><span class="line">  )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+            <p class="article-more-link">
+              <a href="/2022/02/17/内部echart饼状图样式/#more">Read More</a>
+            </p>
+          
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2022/02/17/内部echart饼状图样式/" data-id="ckzqf6nu50005yow0370y6163" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工作记录/">工作记录</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-内部投影变换的问题" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/01/14/内部投影变换的问题/" class="article-date">
+  <time class="post-time" datetime="2022-01-14T02:11:16.000Z" itemprop="datePublished">
+    <span class="post-month">1月</span><br/>
+    <span class="post-day">14</span>
+  </time>
+</a>
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/01/14/内部投影变换的问题/">内部投影变换的问题</a>
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/工作记录/">工作记录</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+        
+          <h1 id="extent类型的投影变换"><a href="#extent类型的投影变换" class="headerlink" title="extent类型的投影变换"></a>extent类型的投影变换</h1><h3 id="注意-extent的投影变换type类型为Envelope"><a href="#注意-extent的投影变换type类型为Envelope" class="headerlink" title="注意:extent的投影变换type类型为Envelope"></a>注意:extent的投影变换type类型为Envelope</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">params = &#123;</span><br><span class="line">  geometries:&#123;</span><br><span class="line">    <span class="string">"geometryType"</span>:<span class="string">"Envelope"</span>,</span><br><span class="line">    <span class="string">"geometries"</span>:[&#123;<span class="string">"xmin"</span>:<span class="number">797723.9143468714</span>,<span class="string">"ymin"</span>:<span class="number">3383449.089372665</span>,<span class="string">"xmax"</span>:<span class="number">798550.7389171873</span>,<span class="string">"ymax"</span>:<span class="number">3384507.4248226695</span>&#125;]</span><br><span class="line">  &#125;,</span><br><span class="line">  inSR:<span class="number">2345</span></span><br><span class="line">  outSR:<span class="number">2345</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">http:<span class="comment">//rest.wuchangwater.cn/yoteam/2/services/WuChangPipe/Pipe/GeometryServer/project?token=2af7bc5a-3fc6-4376-8f3c-fbe7a84bdcdb&amp;t=1642215519924&amp;geometries=&#123;"geometryType":"Envelope","geometries":[&#123;"xmin":797723.9143468714,"ymin":3383449.089372665,"xmax":798550.7389171873,"ymax":3384507.4248226695&#125;]&#125;&amp;inSR=2345&amp;outSR=2345</span></span><br></pre></td></tr></table></figure>
+          
+            <p class="article-more-link">
+              <a href="/2022/01/14/内部投影变换的问题/#more">Read More</a>
+            </p>
+          
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2022/01/14/内部投影变换的问题/" data-id="ckzqf6nu60006yow0sv1s4ie6" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工作记录/">工作记录</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
   
     <article id="post-监测dom的变化" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -116,7 +236,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2021/11/15/监测dom的变化/" data-id="ckw227ukb000a38w0u3x8hs7f" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2021/11/15/监测dom的变化/" data-id="ckzqf6nu90008yow04uwymzh2" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工作记录/">工作记录</a></li></ul>
@@ -176,7 +296,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2021/10/21/echarts组件/" data-id="ckw227uk7000538w09cvm0anz" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2021/10/21/echarts组件/" data-id="ckzqf6nu00002yow07e9zyt2r" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工作记录/">工作记录</a></li></ul>
@@ -236,7 +356,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/11/21/文件上传/" data-id="ckw227uka000938w07ogss3gy" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2020/11/21/文件上传/" data-id="ckzqf6nu80007yow07le4w3cb" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工作记录/">工作记录</a></li></ul>
@@ -296,7 +416,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/19/一些自己常用的网站/" data-id="ckw227uk9000838w04bqhdqeg" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2018/04/19/一些自己常用的网站/" data-id="ckzqf6nu40004yow0ipvkse58" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/个人/">个人</a></li></ul>
@@ -349,7 +469,7 @@
     <h2 class="author">daniel-lij</h2>
     <h3 class="description">( ゜- ゜)つロ 干杯</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>4</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>6</strong><br>文章</div></a>
       <a href="/categories"><div><strong>3</strong><br>分类</div></a>
       <a href="/tags"><div><strong>2</strong><br>标签</div></a>
     </div>
@@ -383,7 +503,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy;2020 - 2021 daniel-lij<br>
+      &copy;2021 - 2022 daniel-lij<br>
       
     </div>
     
