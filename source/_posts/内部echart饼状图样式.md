@@ -99,4 +99,4 @@ categories: [工作记录]
     }
 ```
 
-![RUNOOB 图标](../images/20220217/饼状图.png)
+![饼图](/images/20220217/饼状图.png)
