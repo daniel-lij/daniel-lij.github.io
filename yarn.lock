@@ -1327,10 +1327,10 @@ hexo-util@^1.0.0:
     strip-indent "^3.0.0"
     striptags "^3.1.1"
 
-hexo@^3.7.1:
+hexo@^3.9.0:
   version "3.9.0"
-  resolved "https://registry.npm.taobao.org/hexo/download/hexo-3.9.0.tgz#7b5afe3b7de8829469635acc952757fac3ec863c"
-  integrity sha1-e1r+O33ogpRpY1rMlSdX+sPshjw=
+  resolved "https://registry.yarnpkg.com/hexo/-/hexo-3.9.0.tgz#7b5afe3b7de8829469635acc952757fac3ec863c"
+  integrity sha512-uga6MsxGlD0AeafiObbFkQVWlUO+wWTb/IJVPI3fFpmAJu0PBD//Ek0qVOxHjlzdvFGeW0bYWYqXgDbR7suJng==
   dependencies:
     abbrev "^1.1.1"
     archy "^1.0.0"
@@ -1928,8 +1928,8 @@ ms@2.1.1:
 
 ms@2.1.2:
   version "2.1.2"
-  resolved "https://registry.npm.taobao.org/ms/download/ms-2.1.2.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fms%2Fdownload%2Fms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
-  integrity sha1-0J0fNXtEP0kzgqjrPM0YOHKuYAk=
+  resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
+  integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
 
 mv@~2:
   version "2.1.1"
